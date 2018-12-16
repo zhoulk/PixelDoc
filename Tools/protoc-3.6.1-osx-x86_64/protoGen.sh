@@ -1,0 +1,1 @@
+./bin/protoc --go_out="./output/go" ./src/*.proto
