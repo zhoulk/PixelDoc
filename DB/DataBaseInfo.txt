@@ -1,0 +1,13 @@
+********************
+*General Information
+********************
+服务器类型: MySQL
+连接名: sanguo_remote
+主机名或 IP 地址: rm-wz9sw694mi8020vigo.mysql.rds.aliyuncs.com
+端口: 3306
+用户名: root
+保存密码: 是
+编码: Unicode (UTF-8)
+Enable MySQL character set: 是
+Use compression: 否
+

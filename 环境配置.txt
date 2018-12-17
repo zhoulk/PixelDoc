@@ -1,4 +1,4 @@
-﻿GO
+GO
 
 go get github.com/name5566/leaf 
 go get github.com/golang/protobuf/proto    
@@ -41,3 +41,6 @@ python setup.py build
 python setup.py install 
 python setup.py test
 
+
+数据库
+go get github.com/go-sql-driver/mysql
