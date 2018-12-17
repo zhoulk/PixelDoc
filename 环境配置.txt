@@ -1,9 +1,11 @@
-GO
+﻿GO
 
 go get github.com/name5566/leaf 
 go get github.com/golang/protobuf/proto    
 go get gopkg.in/mgo.v2
 go get -u github.com/golang/protobuf/protoc-gen-go
+
+go get -v github.com/derekparker/delve/cmd/dlv
 
 
 VSCode 插件安装
@@ -25,3 +27,17 @@ git clone https://github.com/golang/tools.git tools
 mkdir -p $GOPATH/src/golang.org/x/
 cp -avX $GOPATH/src/github.com/golang/tools $GOPATH/src/golang.org/x/
 cp -avX $GOPATH/src/github.com/golang/lint $GOPATH/src/golang.org/x/
+
+
+
+
+执行 protoc-gen-lua 需要的环境
+Python
+
+pip install setuptools==25.0.2
+
+安装 python 版 protoBuffer
+python setup.py build 
+python setup.py install 
+python setup.py test
+
