@@ -1,1 +1,1 @@
-@python F:/framework/protoc-gen-lua-master/protoc-gen-lua-master/plugin/protoc-gen-lua
+@python E:/gitHub/PixelFarm\\PixelDoc\\Tools\\protoc-gen-lua-master\\plugin/protoc-gen-lua

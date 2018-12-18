@@ -1,6 +1,8 @@
 syntax = "proto3";
 package msg;
 
+import "err.proto";
+
 // 登录
 message LoginRequest {
 	string account = 1;
@@ -14,6 +16,7 @@ message LoginResponse {
 	}
 	LoginResponseCode code = 1;
 	string uid = 2;
+	Error err = 3;
 }
 
 // 注册
@@ -29,4 +32,5 @@ message RegisteResponse {
 	}
 	RegisteResponseCode code = 1;
 	string uid = 2;
+	Error err = 3;
 }

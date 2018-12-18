@@ -9,9 +9,9 @@ cd /d %curdir%
 
 for /r .\src %%i in (*.proto) do (
 	echo "%%~nxi"
-	protoc --csharp_out=./output/csharp ./src/%%~nxi
-	protoc --go_out=./output/go ./src/%%~nxi
-	protoc --lua_out=./output/lua --plugin=protoc-gen-lua="E:\\gitHub\\PixelFarm\\PixelDoc\\Tools\\protoc-gen-lua-master\\plugin/protoc-gen-lua.bat" ./src/%%~nxi
+	protoc --proto_path=./src/ --csharp_out=./output/csharp %%~nxi
+	protoc --proto_path=./src/ --go_out=./output/go %%~nxi
+	protoc --proto_path=./src/ --lua_out=./output/lua --plugin=protoc-gen-lua="E:\\gitHub\\PixelFarm\\PixelDoc\\Tools\\protoc-gen-lua-master\\plugin/protoc-gen-lua.bat" %%~nxi
 )
 
 pause
