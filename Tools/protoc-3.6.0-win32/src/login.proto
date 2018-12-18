@@ -9,11 +9,12 @@ message LoginRequest {
 	string password = 2;
 }
 
+enum LoginResponseCode {
+	FAIL = 0;
+	SUCCESS = 1;
+}
+
 message LoginResponse {
-	enum LoginResponseCode {
-		FAIL = 0;
-		SUCCESS = 1;
-	}
 	LoginResponseCode code = 1;
 	string uid = 2;
 	Error err = 3;
@@ -25,11 +26,13 @@ message RegisteRequest {
 	string password = 2;
 }
 
+enum RegisteResponseCode {
+	FAIL = 0;
+	SUCCESS = 1;
+}
+
 message RegisteResponse {
-	enum RegisteResponseCode {
-		FAIL = 0;
-		SUCCESS = 1;
-	}
+
 	RegisteResponseCode code = 1;
 	string uid = 2;
 	Error err = 3;
