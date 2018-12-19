@@ -12,6 +12,7 @@ for /r .\src %%i in (*.proto) do (
 	protoc --proto_path=./src/ --csharp_out=./output/csharp %%~nxi
 	protoc --proto_path=./src/ --go_out=./output/go %%~nxi
 	protoc --proto_path=./src/ --lua_out=./output/lua --plugin=protoc-gen-lua="E:\\gitHub\\PixelFarm\\PixelDoc\\Tools\\protoc-gen-lua-master\\plugin/protoc-gen-lua.bat" %%~nxi
+	protoc --proto_path=./src/ --descriptor_set_out=./output/pb/%%~ni.pb %%~nxi
 )
 
 pause

@@ -3,19 +3,19 @@ package msg;
 
 import "err.proto";
 
+enum ResponseCode {
+	FAIL = 0;
+	SUCCESS = 1;
+}
+
 // 登录
 message LoginRequest {
 	string account = 1;
 	string password = 2;
 }
 
-enum LoginResponseCode {
-	FAIL = 0;
-	SUCCESS = 1;
-}
-
 message LoginResponse {
-	LoginResponseCode code = 1;
+	ResponseCode code = 1;
 	string uid = 2;
 	Error err = 3;
 }
@@ -26,14 +26,9 @@ message RegisteRequest {
 	string password = 2;
 }
 
-enum RegisteResponseCode {
-	FAIL = 0;
-	SUCCESS = 1;
-}
-
 message RegisteResponse {
 
-	RegisteResponseCode code = 1;
+	ResponseCode code = 1;
 	string uid = 2;
 	Error err = 3;
 }

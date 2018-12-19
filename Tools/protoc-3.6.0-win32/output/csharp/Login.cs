@@ -25,28 +25,33 @@ namespace Msg {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cgtsb2dpbi5wcm90bxIDbXNnGgllcnIucHJvdG8iMQoMTG9naW5SZXF1ZXN0",
-            "Eg8KB2FjY291bnQYASABKAkSEAoIcGFzc3dvcmQYAiABKAkilQEKDUxvZ2lu",
-            "UmVzcG9uc2USMgoEY29kZRgBIAEoDjIkLm1zZy5Mb2dpblJlc3BvbnNlLkxv",
-            "Z2luUmVzcG9uc2VDb2RlEgsKA3VpZBgCIAEoCRIXCgNlcnIYAyABKAsyCi5t",
-            "c2cuRXJyb3IiKgoRTG9naW5SZXNwb25zZUNvZGUSCAoERkFJTBAAEgsKB1NV",
-            "Q0NFU1MQASIzCg5SZWdpc3RlUmVxdWVzdBIPCgdhY2NvdW50GAEgASgJEhAK",
-            "CHBhc3N3b3JkGAIgASgJIp0BCg9SZWdpc3RlUmVzcG9uc2USNgoEY29kZRgB",
-            "IAEoDjIoLm1zZy5SZWdpc3RlUmVzcG9uc2UuUmVnaXN0ZVJlc3BvbnNlQ29k",
-            "ZRILCgN1aWQYAiABKAkSFwoDZXJyGAMgASgLMgoubXNnLkVycm9yIiwKE1Jl",
-            "Z2lzdGVSZXNwb25zZUNvZGUSCAoERkFJTBAAEgsKB1NVQ0NFU1MQAWIGcHJv",
-            "dG8z"));
+            "Eg8KB2FjY291bnQYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiVgoNTG9naW5S",
+            "ZXNwb25zZRIfCgRjb2RlGAEgASgOMhEubXNnLlJlc3BvbnNlQ29kZRILCgN1",
+            "aWQYAiABKAkSFwoDZXJyGAMgASgLMgoubXNnLkVycm9yIjMKDlJlZ2lzdGVS",
+            "ZXF1ZXN0Eg8KB2FjY291bnQYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiWAoP",
+            "UmVnaXN0ZVJlc3BvbnNlEh8KBGNvZGUYASABKA4yES5tc2cuUmVzcG9uc2VD",
+            "b2RlEgsKA3VpZBgCIAEoCRIXCgNlcnIYAyABKAsyCi5tc2cuRXJyb3IqJQoM",
+            "UmVzcG9uc2VDb2RlEggKBEZBSUwQABILCgdTVUNDRVNTEAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Msg.ResponseCode), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.LoginRequest), global::Msg.LoginRequest.Parser, new[]{ "Account", "Password" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.LoginResponse), global::Msg.LoginResponse.Parser, new[]{ "Code", "Uid", "Err" }, null, new[]{ typeof(global::Msg.LoginResponse.Types.LoginResponseCode) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.LoginResponse), global::Msg.LoginResponse.Parser, new[]{ "Code", "Uid", "Err" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.RegisteRequest), global::Msg.RegisteRequest.Parser, new[]{ "Account", "Password" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.RegisteResponse), global::Msg.RegisteResponse.Parser, new[]{ "Code", "Uid", "Err" }, null, new[]{ typeof(global::Msg.RegisteResponse.Types.RegisteResponseCode) }, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.RegisteResponse), global::Msg.RegisteResponse.Parser, new[]{ "Code", "Uid", "Err" }, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum ResponseCode {
+    [pbr::OriginalName("FAIL")] Fail = 0,
+    [pbr::OriginalName("SUCCESS")] Success = 1,
+  }
+
+  #endregion
+
   #region Messages
   /// <summary>
   /// 登录
@@ -246,9 +251,9 @@ namespace Msg {
 
     /// <summary>Field number for the "code" field.</summary>
     public const int CodeFieldNumber = 1;
-    private global::Msg.LoginResponse.Types.LoginResponseCode code_ = 0;
+    private global::Msg.ResponseCode code_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Msg.LoginResponse.Types.LoginResponseCode Code {
+    public global::Msg.ResponseCode Code {
       get { return code_; }
       set {
         code_ = value;
@@ -379,7 +384,7 @@ namespace Msg {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            code_ = (global::Msg.LoginResponse.Types.LoginResponseCode) input.ReadEnum();
+            code_ = (global::Msg.ResponseCode) input.ReadEnum();
             break;
           }
           case 18: {
@@ -396,18 +401,6 @@ namespace Msg {
         }
       }
     }
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the LoginResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static partial class Types {
-      public enum LoginResponseCode {
-        [pbr::OriginalName("FAIL")] Fail = 0,
-        [pbr::OriginalName("SUCCESS")] Success = 1,
-      }
-
-    }
-    #endregion
 
   }
 
@@ -609,9 +602,9 @@ namespace Msg {
 
     /// <summary>Field number for the "code" field.</summary>
     public const int CodeFieldNumber = 1;
-    private global::Msg.RegisteResponse.Types.RegisteResponseCode code_ = 0;
+    private global::Msg.ResponseCode code_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Msg.RegisteResponse.Types.RegisteResponseCode Code {
+    public global::Msg.ResponseCode Code {
       get { return code_; }
       set {
         code_ = value;
@@ -742,7 +735,7 @@ namespace Msg {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            code_ = (global::Msg.RegisteResponse.Types.RegisteResponseCode) input.ReadEnum();
+            code_ = (global::Msg.ResponseCode) input.ReadEnum();
             break;
           }
           case 18: {
@@ -759,18 +752,6 @@ namespace Msg {
         }
       }
     }
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the RegisteResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static partial class Types {
-      public enum RegisteResponseCode {
-        [pbr::OriginalName("FAIL")] Fail = 0,
-        [pbr::OriginalName("SUCCESS")] Success = 1,
-      }
-
-    }
-    #endregion
 
   }
 
