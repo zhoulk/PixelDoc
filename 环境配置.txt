@@ -1,4 +1,4 @@
-GO
+﻿GO
 
 go get github.com/name5566/leaf 
 go get github.com/golang/protobuf/proto    
@@ -6,6 +6,8 @@ go get gopkg.in/mgo.v2
 go get -u github.com/golang/protobuf/protoc-gen-go
 
 go get -v github.com/derekparker/delve/cmd/dlv
+
+go get -u -v -tags "reuseport quic kcp zookeeper etcd consul ping rudp utp" github.com/smallnest/rpcx/...
 
 
 VSCode 插件安装
