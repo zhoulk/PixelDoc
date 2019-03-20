@@ -1,0 +1,51 @@
+syntax = "proto3";
+package msg;
+
+import "err.proto";
+
+message HeroRequest{
+
+}
+
+message HeroResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated Hero heros = 3;
+}
+
+enum HeroRandomLevel{
+	GOOD = 0;
+	BETTER = 1;
+	BEST = 2;
+}
+
+message HeroRandomRequest{
+	HeroRandomLevel Level = 1;
+}
+
+message HeroRandomResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+}
+
+message HeroOwnRequest{
+
+}
+
+message HeroOwnResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated Hero heros = 3;
+}
+
+message Hero{
+    string Id    = 1;
+	string Name  = 2;
+    int32  Level = 3;
+    int32  Strength  =4;  
+	int32  Agility   =5;
+	int32  Intelligence =6;
+	int32  Armor      =7;
+	int32  Attack     =8;
+	int32  Blood      =9;
+}

@@ -25,16 +25,25 @@ namespace Msg {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CgllcnIucHJvdG8SA21zZyIiCgVFcnJvchIMCgRjb2RlGAEgASgFEgsKA21z",
-            "ZxgCIAEoCWIGcHJvdG8z"));
+            "ZxgCIAEoCSolCgxSZXNwb25zZUNvZGUSCAoERkFJTBAAEgsKB1NVQ0NFU1MQ",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Msg.ResponseCode), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Error), global::Msg.Error.Parser, new[]{ "Code", "Msg" }, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum ResponseCode {
+    [pbr::OriginalName("FAIL")] Fail = 0,
+    [pbr::OriginalName("SUCCESS")] Success = 1,
+  }
+
+  #endregion
+
   #region Messages
   public sealed partial class Error : pb::IMessage<Error> {
     private static readonly pb::MessageParser<Error> _parser = new pb::MessageParser<Error>(() => new Error());

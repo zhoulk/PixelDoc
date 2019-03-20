@@ -3,11 +3,6 @@ package msg;
 
 import "err.proto";
 
-enum ResponseCode {
-	FAIL = 0;
-	SUCCESS = 1;
-}
-
 // 登录
 message LoginRequest {
 	string account = 1;
@@ -17,7 +12,9 @@ message LoginRequest {
 message LoginResponse {
 	ResponseCode code = 1;
 	string uid = 2;
-	Error err = 3;
+	string host = 3;
+	string port = 4;
+	Error err = 5;
 }
 
 // 注册

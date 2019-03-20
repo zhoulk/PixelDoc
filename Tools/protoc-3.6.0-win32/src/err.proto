@@ -5,3 +5,8 @@ message Error {
     int32 code = 1;
     string msg = 2;
 }
+
+enum ResponseCode {
+	FAIL = 0;
+	SUCCESS = 1;
+}

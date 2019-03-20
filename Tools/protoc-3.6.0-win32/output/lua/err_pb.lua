@@ -3,10 +3,22 @@ local protobuf = require "protobuf/protobuf"
 module('err_pb')
 
 
+local RESPONSECODE = protobuf.EnumDescriptor();
+local RESPONSECODE_FAIL_ENUM = protobuf.EnumValueDescriptor();
+local RESPONSECODE_SUCCESS_ENUM = protobuf.EnumValueDescriptor();
 local ERROR = protobuf.Descriptor();
 local ERROR_CODE_FIELD = protobuf.FieldDescriptor();
 local ERROR_MSG_FIELD = protobuf.FieldDescriptor();
 
+RESPONSECODE_FAIL_ENUM.name = "FAIL"
+RESPONSECODE_FAIL_ENUM.index = 0
+RESPONSECODE_FAIL_ENUM.number = 0
+RESPONSECODE_SUCCESS_ENUM.name = "SUCCESS"
+RESPONSECODE_SUCCESS_ENUM.index = 1
+RESPONSECODE_SUCCESS_ENUM.number = 1
+RESPONSECODE.name = "ResponseCode"
+RESPONSECODE.full_name = ".msg.ResponseCode"
+RESPONSECODE.values = {RESPONSECODE_FAIL_ENUM,RESPONSECODE_SUCCESS_ENUM}
 ERROR_CODE_FIELD.name = "code"
 ERROR_CODE_FIELD.full_name = ".msg.Error.code"
 ERROR_CODE_FIELD.number = 1
@@ -36,4 +48,6 @@ ERROR.is_extendable = false
 ERROR.extensions = {}
 
 Error = protobuf.Message(ERROR)
+FAIL = 0
+SUCCESS = 1
 

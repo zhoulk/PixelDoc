@@ -25,18 +25,18 @@ namespace Msg {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cgtsb2dpbi5wcm90bxIDbXNnGgllcnIucHJvdG8iMQoMTG9naW5SZXF1ZXN0",
-            "Eg8KB2FjY291bnQYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiVgoNTG9naW5S",
+            "Eg8KB2FjY291bnQYASABKAkSEAoIcGFzc3dvcmQYAiABKAkicgoNTG9naW5S",
             "ZXNwb25zZRIfCgRjb2RlGAEgASgOMhEubXNnLlJlc3BvbnNlQ29kZRILCgN1",
-            "aWQYAiABKAkSFwoDZXJyGAMgASgLMgoubXNnLkVycm9yIjMKDlJlZ2lzdGVS",
-            "ZXF1ZXN0Eg8KB2FjY291bnQYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiWAoP",
-            "UmVnaXN0ZVJlc3BvbnNlEh8KBGNvZGUYASABKA4yES5tc2cuUmVzcG9uc2VD",
-            "b2RlEgsKA3VpZBgCIAEoCRIXCgNlcnIYAyABKAsyCi5tc2cuRXJyb3IqJQoM",
-            "UmVzcG9uc2VDb2RlEggKBEZBSUwQABILCgdTVUNDRVNTEAFiBnByb3RvMw=="));
+            "aWQYAiABKAkSDAoEaG9zdBgDIAEoCRIMCgRwb3J0GAQgASgJEhcKA2VychgF",
+            "IAEoCzIKLm1zZy5FcnJvciIzCg5SZWdpc3RlUmVxdWVzdBIPCgdhY2NvdW50",
+            "GAEgASgJEhAKCHBhc3N3b3JkGAIgASgJIlgKD1JlZ2lzdGVSZXNwb25zZRIf",
+            "CgRjb2RlGAEgASgOMhEubXNnLlJlc3BvbnNlQ29kZRILCgN1aWQYAiABKAkS",
+            "FwoDZXJyGAMgASgLMgoubXNnLkVycm9yYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Msg.ResponseCode), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.LoginRequest), global::Msg.LoginRequest.Parser, new[]{ "Account", "Password" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.LoginResponse), global::Msg.LoginResponse.Parser, new[]{ "Code", "Uid", "Err" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.LoginResponse), global::Msg.LoginResponse.Parser, new[]{ "Code", "Uid", "Host", "Port", "Err" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.RegisteRequest), global::Msg.RegisteRequest.Parser, new[]{ "Account", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.RegisteResponse), global::Msg.RegisteResponse.Parser, new[]{ "Code", "Uid", "Err" }, null, null, null)
           }));
@@ -44,14 +44,6 @@ namespace Msg {
     #endregion
 
   }
-  #region Enums
-  public enum ResponseCode {
-    [pbr::OriginalName("FAIL")] Fail = 0,
-    [pbr::OriginalName("SUCCESS")] Success = 1,
-  }
-
-  #endregion
-
   #region Messages
   /// <summary>
   /// 登录
@@ -240,6 +232,8 @@ namespace Msg {
     public LoginResponse(LoginResponse other) : this() {
       code_ = other.code_;
       uid_ = other.uid_;
+      host_ = other.host_;
+      port_ = other.port_;
       err_ = other.err_ != null ? other.err_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -271,8 +265,30 @@ namespace Msg {
       }
     }
 
+    /// <summary>Field number for the "host" field.</summary>
+    public const int HostFieldNumber = 3;
+    private string host_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Host {
+      get { return host_; }
+      set {
+        host_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "port" field.</summary>
+    public const int PortFieldNumber = 4;
+    private string port_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Port {
+      get { return port_; }
+      set {
+        port_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "err" field.</summary>
-    public const int ErrFieldNumber = 3;
+    public const int ErrFieldNumber = 5;
     private global::Msg.Error err_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Msg.Error Err {
@@ -297,6 +313,8 @@ namespace Msg {
       }
       if (Code != other.Code) return false;
       if (Uid != other.Uid) return false;
+      if (Host != other.Host) return false;
+      if (Port != other.Port) return false;
       if (!object.Equals(Err, other.Err)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -306,6 +324,8 @@ namespace Msg {
       int hash = 1;
       if (Code != 0) hash ^= Code.GetHashCode();
       if (Uid.Length != 0) hash ^= Uid.GetHashCode();
+      if (Host.Length != 0) hash ^= Host.GetHashCode();
+      if (Port.Length != 0) hash ^= Port.GetHashCode();
       if (err_ != null) hash ^= Err.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -328,8 +348,16 @@ namespace Msg {
         output.WriteRawTag(18);
         output.WriteString(Uid);
       }
-      if (err_ != null) {
+      if (Host.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Host);
+      }
+      if (Port.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Port);
+      }
+      if (err_ != null) {
+        output.WriteRawTag(42);
         output.WriteMessage(Err);
       }
       if (_unknownFields != null) {
@@ -345,6 +373,12 @@ namespace Msg {
       }
       if (Uid.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Uid);
+      }
+      if (Host.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Host);
+      }
+      if (Port.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Port);
       }
       if (err_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Err);
@@ -365,6 +399,12 @@ namespace Msg {
       }
       if (other.Uid.Length != 0) {
         Uid = other.Uid;
+      }
+      if (other.Host.Length != 0) {
+        Host = other.Host;
+      }
+      if (other.Port.Length != 0) {
+        Port = other.Port;
       }
       if (other.err_ != null) {
         if (err_ == null) {
@@ -392,6 +432,14 @@ namespace Msg {
             break;
           }
           case 26: {
+            Host = input.ReadString();
+            break;
+          }
+          case 34: {
+            Port = input.ReadString();
+            break;
+          }
+          case 42: {
             if (err_ == null) {
               err_ = new global::Msg.Error();
             }
