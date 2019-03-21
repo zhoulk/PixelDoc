@@ -1,0 +1,28 @@
+syntax = "proto3";
+package msg;
+
+import "err.proto";
+
+message ItemRequest{
+
+}
+
+message ItemResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated Item items = 3;
+}
+
+message Item {
+    int32 Id     =1;
+	string Name   =2;
+	int32 Price  =3;
+	string Effect = 4;
+	string Desc   =5;
+	repeated Mix Mixs  = 6;
+}
+
+message Mix {
+    int32 ItemId  = 1;
+	int32 Num    = 2;
+}

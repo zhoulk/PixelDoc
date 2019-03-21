@@ -32,12 +32,15 @@ namespace Msg {
             "CgRjb2RlGAEgASgOMhEubXNnLlJlc3BvbnNlQ29kZRIXCgNlcnIYAiABKAsy",
             "Ci5tc2cuRXJyb3IiEAoOSGVyb093blJlcXVlc3QiZQoPSGVyb093blJlc3Bv",
             "bnNlEh8KBGNvZGUYASABKA4yES5tc2cuUmVzcG9uc2VDb2RlEhcKA2VychgC",
-            "IAEoCzIKLm1zZy5FcnJvchIYCgVoZXJvcxgDIAMoCzIJLm1zZy5IZXJvIpYB",
-            "CgRIZXJvEgoKAklkGAEgASgJEgwKBE5hbWUYAiABKAkSDQoFTGV2ZWwYAyAB",
+            "IAEoCzIKLm1zZy5FcnJvchIYCgVoZXJvcxgDIAMoCzIJLm1zZy5IZXJvIpEC",
+            "CgRIZXJvEgoKAklkGAEgASgFEgwKBE5hbWUYAiABKAkSDQoFTGV2ZWwYAyAB",
             "KAUSEAoIU3RyZW5ndGgYBCABKAUSDwoHQWdpbGl0eRgFIAEoBRIUCgxJbnRl",
-            "bGxpZ2VuY2UYBiABKAUSDQoFQXJtb3IYByABKAUSDgoGQXR0YWNrGAggASgF",
-            "Eg0KBUJsb29kGAkgASgFKjEKD0hlcm9SYW5kb21MZXZlbBIICgRHT09EEAAS",
-            "CgoGQkVUVEVSEAESCAoEQkVTVBACYgZwcm90bzM="));
+            "bGxpZ2VuY2UYBiABKAUSDQoFQXJtb3IYByABKAUSEQoJQXR0YWNrTWluGAgg",
+            "ASgFEhEKCUF0dGFja01heBgJIAEoBRINCgVCbG9vZBgKIAEoBRIMCgRUeXBl",
+            "GAsgASgFEhQKDFN0cmVuZ3RoU3RlcBgMIAEoBRITCgtBZ2lsaXR5U3RlcBgN",
+            "IAEoBRIYChBJbnRlbGxpZ2VuY2VTdGVwGA4gASgFEhAKCFNraWxsSWRzGA8g",
+            "AygJKjEKD0hlcm9SYW5kb21MZXZlbBIICgRHT09EEAASCgoGQkVUVEVSEAES",
+            "CAoEQkVTVBACYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Msg.HeroRandomLevel), }, new pbr::GeneratedClrTypeInfo[] {
@@ -47,7 +50,7 @@ namespace Msg {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.HeroRandomResponse), global::Msg.HeroRandomResponse.Parser, new[]{ "Code", "Err" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.HeroOwnRequest), global::Msg.HeroOwnRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.HeroOwnResponse), global::Msg.HeroOwnResponse.Parser, new[]{ "Code", "Err", "Heros" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Hero), global::Msg.Hero.Parser, new[]{ "Id", "Name", "Level", "Strength", "Agility", "Intelligence", "Armor", "Attack", "Blood" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Hero), global::Msg.Hero.Parser, new[]{ "Id", "Name", "Level", "Strength", "Agility", "Intelligence", "Armor", "AttackMin", "AttackMax", "Blood", "Type", "StrengthStep", "AgilityStep", "IntelligenceStep", "SkillIds" }, null, null, null)
           }));
     }
     #endregion
@@ -955,8 +958,14 @@ namespace Msg {
       agility_ = other.agility_;
       intelligence_ = other.intelligence_;
       armor_ = other.armor_;
-      attack_ = other.attack_;
+      attackMin_ = other.attackMin_;
+      attackMax_ = other.attackMax_;
       blood_ = other.blood_;
+      type_ = other.type_;
+      strengthStep_ = other.strengthStep_;
+      agilityStep_ = other.agilityStep_;
+      intelligenceStep_ = other.intelligenceStep_;
+      skillIds_ = other.skillIds_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -967,12 +976,12 @@ namespace Msg {
 
     /// <summary>Field number for the "Id" field.</summary>
     public const int IdFieldNumber = 1;
-    private string id_ = "";
+    private int id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Id {
+    public int Id {
       get { return id_; }
       set {
-        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        id_ = value;
       }
     }
 
@@ -1042,19 +1051,30 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "Attack" field.</summary>
-    public const int AttackFieldNumber = 8;
-    private int attack_;
+    /// <summary>Field number for the "AttackMin" field.</summary>
+    public const int AttackMinFieldNumber = 8;
+    private int attackMin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Attack {
-      get { return attack_; }
+    public int AttackMin {
+      get { return attackMin_; }
       set {
-        attack_ = value;
+        attackMin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "AttackMax" field.</summary>
+    public const int AttackMaxFieldNumber = 9;
+    private int attackMax_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttackMax {
+      get { return attackMax_; }
+      set {
+        attackMax_ = value;
       }
     }
 
     /// <summary>Field number for the "Blood" field.</summary>
-    public const int BloodFieldNumber = 9;
+    public const int BloodFieldNumber = 10;
     private int blood_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Blood {
@@ -1062,6 +1082,60 @@ namespace Msg {
       set {
         blood_ = value;
       }
+    }
+
+    /// <summary>Field number for the "Type" field.</summary>
+    public const int TypeFieldNumber = 11;
+    private int type_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "StrengthStep" field.</summary>
+    public const int StrengthStepFieldNumber = 12;
+    private int strengthStep_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StrengthStep {
+      get { return strengthStep_; }
+      set {
+        strengthStep_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "AgilityStep" field.</summary>
+    public const int AgilityStepFieldNumber = 13;
+    private int agilityStep_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AgilityStep {
+      get { return agilityStep_; }
+      set {
+        agilityStep_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "IntelligenceStep" field.</summary>
+    public const int IntelligenceStepFieldNumber = 14;
+    private int intelligenceStep_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntelligenceStep {
+      get { return intelligenceStep_; }
+      set {
+        intelligenceStep_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "SkillIds" field.</summary>
+    public const int SkillIdsFieldNumber = 15;
+    private static readonly pb::FieldCodec<string> _repeated_skillIds_codec
+        = pb::FieldCodec.ForString(122);
+    private readonly pbc::RepeatedField<string> skillIds_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> SkillIds {
+      get { return skillIds_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1084,23 +1158,35 @@ namespace Msg {
       if (Agility != other.Agility) return false;
       if (Intelligence != other.Intelligence) return false;
       if (Armor != other.Armor) return false;
-      if (Attack != other.Attack) return false;
+      if (AttackMin != other.AttackMin) return false;
+      if (AttackMax != other.AttackMax) return false;
       if (Blood != other.Blood) return false;
+      if (Type != other.Type) return false;
+      if (StrengthStep != other.StrengthStep) return false;
+      if (AgilityStep != other.AgilityStep) return false;
+      if (IntelligenceStep != other.IntelligenceStep) return false;
+      if(!skillIds_.Equals(other.skillIds_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Level != 0) hash ^= Level.GetHashCode();
       if (Strength != 0) hash ^= Strength.GetHashCode();
       if (Agility != 0) hash ^= Agility.GetHashCode();
       if (Intelligence != 0) hash ^= Intelligence.GetHashCode();
       if (Armor != 0) hash ^= Armor.GetHashCode();
-      if (Attack != 0) hash ^= Attack.GetHashCode();
+      if (AttackMin != 0) hash ^= AttackMin.GetHashCode();
+      if (AttackMax != 0) hash ^= AttackMax.GetHashCode();
       if (Blood != 0) hash ^= Blood.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
+      if (StrengthStep != 0) hash ^= StrengthStep.GetHashCode();
+      if (AgilityStep != 0) hash ^= AgilityStep.GetHashCode();
+      if (IntelligenceStep != 0) hash ^= IntelligenceStep.GetHashCode();
+      hash ^= skillIds_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1114,9 +1200,9 @@ namespace Msg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Id.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Id);
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(18);
@@ -1142,14 +1228,35 @@ namespace Msg {
         output.WriteRawTag(56);
         output.WriteInt32(Armor);
       }
-      if (Attack != 0) {
+      if (AttackMin != 0) {
         output.WriteRawTag(64);
-        output.WriteInt32(Attack);
+        output.WriteInt32(AttackMin);
+      }
+      if (AttackMax != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(AttackMax);
       }
       if (Blood != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteInt32(Blood);
       }
+      if (Type != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Type);
+      }
+      if (StrengthStep != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(StrengthStep);
+      }
+      if (AgilityStep != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(AgilityStep);
+      }
+      if (IntelligenceStep != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(IntelligenceStep);
+      }
+      skillIds_.WriteTo(output, _repeated_skillIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1158,8 +1265,8 @@ namespace Msg {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Id.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
@@ -1179,12 +1286,28 @@ namespace Msg {
       if (Armor != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Armor);
       }
-      if (Attack != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Attack);
+      if (AttackMin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttackMin);
+      }
+      if (AttackMax != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttackMax);
       }
       if (Blood != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Blood);
       }
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
+      }
+      if (StrengthStep != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StrengthStep);
+      }
+      if (AgilityStep != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AgilityStep);
+      }
+      if (IntelligenceStep != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntelligenceStep);
+      }
+      size += skillIds_.CalculateSize(_repeated_skillIds_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1196,7 +1319,7 @@ namespace Msg {
       if (other == null) {
         return;
       }
-      if (other.Id.Length != 0) {
+      if (other.Id != 0) {
         Id = other.Id;
       }
       if (other.Name.Length != 0) {
@@ -1217,12 +1340,28 @@ namespace Msg {
       if (other.Armor != 0) {
         Armor = other.Armor;
       }
-      if (other.Attack != 0) {
-        Attack = other.Attack;
+      if (other.AttackMin != 0) {
+        AttackMin = other.AttackMin;
+      }
+      if (other.AttackMax != 0) {
+        AttackMax = other.AttackMax;
       }
       if (other.Blood != 0) {
         Blood = other.Blood;
       }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
+      if (other.StrengthStep != 0) {
+        StrengthStep = other.StrengthStep;
+      }
+      if (other.AgilityStep != 0) {
+        AgilityStep = other.AgilityStep;
+      }
+      if (other.IntelligenceStep != 0) {
+        IntelligenceStep = other.IntelligenceStep;
+      }
+      skillIds_.Add(other.skillIds_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1234,8 +1373,8 @@ namespace Msg {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            Id = input.ReadString();
+          case 8: {
+            Id = input.ReadInt32();
             break;
           }
           case 18: {
@@ -1263,11 +1402,35 @@ namespace Msg {
             break;
           }
           case 64: {
-            Attack = input.ReadInt32();
+            AttackMin = input.ReadInt32();
             break;
           }
           case 72: {
+            AttackMax = input.ReadInt32();
+            break;
+          }
+          case 80: {
             Blood = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            Type = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            StrengthStep = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            AgilityStep = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            IntelligenceStep = input.ReadInt32();
+            break;
+          }
+          case 122: {
+            skillIds_.AddEntriesFrom(input, _repeated_skillIds_codec);
             break;
           }
         }

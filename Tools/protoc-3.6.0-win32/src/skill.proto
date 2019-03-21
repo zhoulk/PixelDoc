@@ -1,0 +1,22 @@
+syntax = "proto3";
+package msg;
+
+import "err.proto";
+
+message SkillRequest{
+
+}
+
+message SkillResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated Skill skills = 3;
+}
+
+message Skill{
+    int32 Id    = 1;
+	string Name  = 2;
+    int32  Level = 3;
+	int32  Type       =4;
+	string Desc = 5;
+}

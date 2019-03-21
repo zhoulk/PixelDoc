@@ -1,0 +1,48 @@
+syntax = "proto3";
+package msg;
+
+import "err.proto";
+
+message ChapterRequest{
+
+}
+
+message ChapterResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated Chapter chapters = 3;
+}
+
+message Chapter {
+    int32 Id   = 1;
+	string Name  = 2;
+}
+
+message GuanKaRequest{
+
+}
+
+message GuanKaResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated GuanKa guanKas = 3;
+}
+
+message GuanKa {
+    int32 Id    = 1;
+	string Name = 2;
+	int32 ChapterId = 3;
+	Earn  Earn = 4;
+	Expend Expend = 5;
+}
+
+message Earn {
+    repeated string ItemIds = 1;
+	int32 HeroExp   = 2;
+	int32 PlayerExp = 3;
+	int32 Gold      = 4;
+}
+
+message Expend {
+    int32 Power  = 1;
+}

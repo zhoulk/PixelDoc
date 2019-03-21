@@ -1,0 +1,16 @@
+syntax = "proto3";
+package msg;
+
+import "err.proto";
+import "map.proto";
+
+message BattleGuanKaRequest{
+    int32 guanKaId = 1;
+}
+
+message BattleGuanKaResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    int32 result = 3;
+    GuanKa guanka = 4;
+}

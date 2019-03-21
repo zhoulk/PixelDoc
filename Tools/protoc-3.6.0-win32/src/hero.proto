@@ -39,13 +39,19 @@ message HeroOwnResponse {
 }
 
 message Hero{
-    string Id    = 1;
+    int32 Id    = 1;
 	string Name  = 2;
     int32  Level = 3;
     int32  Strength  =4;  
 	int32  Agility   =5;
 	int32  Intelligence =6;
 	int32  Armor      =7;
-	int32  Attack     =8;
-	int32  Blood      =9;
+	int32  AttackMin     =8;
+	int32  AttackMax     =9;
+	int32  Blood      =10;
+	int32  Type       =11;
+	int32  StrengthStep       =12;
+	int32  AgilityStep       =13;
+	int32  IntelligenceStep       =14;
+	repeated string SkillIds = 15;
 }
