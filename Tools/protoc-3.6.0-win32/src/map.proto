@@ -16,6 +16,7 @@ message ChapterResponse {
 message Chapter {
     int32 Id   = 1;
 	string Name  = 2;
+	bool IsOpen = 3;
 }
 
 message GuanKaRequest{
@@ -34,6 +35,7 @@ message GuanKa {
 	int32 ChapterId = 3;
 	Earn  Earn = 4;
 	Expend Expend = 5;
+	bool IsOpen = 6;
 }
 
 message Earn {

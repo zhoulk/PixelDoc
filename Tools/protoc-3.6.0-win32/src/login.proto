@@ -11,10 +11,8 @@ message LoginRequest {
 
 message LoginResponse {
 	ResponseCode code = 1;
-	string uid = 2;
-	string host = 3;
-	string port = 4;
-	Error err = 5;
+	Error err = 2;
+	Player player = 3;
 }
 
 // 注册
@@ -24,8 +22,22 @@ message RegisteRequest {
 }
 
 message RegisteResponse {
-
 	ResponseCode code = 1;
-	string uid = 2;
-	Error err = 3;
+	Error err = 2;
+	Player player = 3;
+}
+
+message Player {
+	string UserId  = 1;
+	string Name    = 2;
+
+	BaseInfo   BaseInfo = 3;
+}
+
+message BaseInfo {
+	int32 Gold    = 1;
+	int32 Diamond = 2;
+	int32 Exp     = 3;
+	int32 Power   = 4;
+	int32 Level   = 5;
 }

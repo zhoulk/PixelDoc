@@ -38,6 +38,27 @@ message HeroOwnResponse {
     repeated Hero heros = 3;
 }
 
+message HeroSelectRequest{
+	string heroId = 1;
+	int32 pos = 2;
+}
+
+message HeroSelectResponse{
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated string heroIds = 3;
+}
+
+message HeroUnSelectRequest{
+	string heroId = 1;
+}
+
+message HeroUnSelectResponse{
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated string heroIds = 3;
+}
+
 message Hero{
     int32 Id    = 1;
 	string Name  = 2;
@@ -54,4 +75,8 @@ message Hero{
 	int32  AgilityStep       =13;
 	int32  IntelligenceStep       =14;
 	repeated string SkillIds = 15;
+	string HeroId = 16;
+	string PlayerId = 17;
+	bool IsSelect = 18;
+	int32 Pos = 19;
 }

@@ -27,24 +27,25 @@ namespace Msg {
             "CgltYXAucHJvdG8SA21zZxoJZXJyLnByb3RvIhAKDkNoYXB0ZXJSZXF1ZXN0",
             "ImsKD0NoYXB0ZXJSZXNwb25zZRIfCgRjb2RlGAEgASgOMhEubXNnLlJlc3Bv",
             "bnNlQ29kZRIXCgNlcnIYAiABKAsyCi5tc2cuRXJyb3ISHgoIY2hhcHRlcnMY",
-            "AyADKAsyDC5tc2cuQ2hhcHRlciIjCgdDaGFwdGVyEgoKAklkGAEgASgFEgwK",
-            "BE5hbWUYAiABKAkiDwoNR3VhbkthUmVxdWVzdCJoCg5HdWFuS2FSZXNwb25z",
-            "ZRIfCgRjb2RlGAEgASgOMhEubXNnLlJlc3BvbnNlQ29kZRIXCgNlcnIYAiAB",
-            "KAsyCi5tc2cuRXJyb3ISHAoHZ3VhbkthcxgDIAMoCzILLm1zZy5HdWFuS2Ei",
-            "awoGR3VhbkthEgoKAklkGAEgASgFEgwKBE5hbWUYAiABKAkSEQoJQ2hhcHRl",
-            "cklkGAMgASgFEhcKBEVhcm4YBCABKAsyCS5tc2cuRWFybhIbCgZFeHBlbmQY",
-            "BSABKAsyCy5tc2cuRXhwZW5kIkkKBEVhcm4SDwoHSXRlbUlkcxgBIAMoCRIP",
-            "CgdIZXJvRXhwGAIgASgFEhEKCVBsYXllckV4cBgDIAEoBRIMCgRHb2xkGAQg",
-            "ASgFIhcKBkV4cGVuZBINCgVQb3dlchgBIAEoBWIGcHJvdG8z"));
+            "AyADKAsyDC5tc2cuQ2hhcHRlciIzCgdDaGFwdGVyEgoKAklkGAEgASgFEgwK",
+            "BE5hbWUYAiABKAkSDgoGSXNPcGVuGAMgASgIIg8KDUd1YW5LYVJlcXVlc3Qi",
+            "aAoOR3VhbkthUmVzcG9uc2USHwoEY29kZRgBIAEoDjIRLm1zZy5SZXNwb25z",
+            "ZUNvZGUSFwoDZXJyGAIgASgLMgoubXNnLkVycm9yEhwKB2d1YW5LYXMYAyAD",
+            "KAsyCy5tc2cuR3VhbkthInsKBkd1YW5LYRIKCgJJZBgBIAEoBRIMCgROYW1l",
+            "GAIgASgJEhEKCUNoYXB0ZXJJZBgDIAEoBRIXCgRFYXJuGAQgASgLMgkubXNn",
+            "LkVhcm4SGwoGRXhwZW5kGAUgASgLMgsubXNnLkV4cGVuZBIOCgZJc09wZW4Y",
+            "BiABKAgiSQoERWFybhIPCgdJdGVtSWRzGAEgAygJEg8KB0hlcm9FeHAYAiAB",
+            "KAUSEQoJUGxheWVyRXhwGAMgASgFEgwKBEdvbGQYBCABKAUiFwoGRXhwZW5k",
+            "Eg0KBVBvd2VyGAEgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ChapterRequest), global::Msg.ChapterRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ChapterResponse), global::Msg.ChapterResponse.Parser, new[]{ "Code", "Err", "Chapters" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Chapter), global::Msg.Chapter.Parser, new[]{ "Id", "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Chapter), global::Msg.Chapter.Parser, new[]{ "Id", "Name", "IsOpen" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GuanKaRequest), global::Msg.GuanKaRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GuanKaResponse), global::Msg.GuanKaResponse.Parser, new[]{ "Code", "Err", "GuanKas" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GuanKa), global::Msg.GuanKa.Parser, new[]{ "Id", "Name", "ChapterId", "Earn", "Expend" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GuanKa), global::Msg.GuanKa.Parser, new[]{ "Id", "Name", "ChapterId", "Earn", "Expend", "IsOpen" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Earn), global::Msg.Earn.Parser, new[]{ "ItemIds", "HeroExp", "PlayerExp", "Gold" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Expend), global::Msg.Expend.Parser, new[]{ "Power" }, null, null, null)
           }));
@@ -364,6 +365,7 @@ namespace Msg {
     public Chapter(Chapter other) : this() {
       id_ = other.id_;
       name_ = other.name_;
+      isOpen_ = other.isOpen_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -394,6 +396,17 @@ namespace Msg {
       }
     }
 
+    /// <summary>Field number for the "IsOpen" field.</summary>
+    public const int IsOpenFieldNumber = 3;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Chapter);
@@ -409,6 +422,7 @@ namespace Msg {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
+      if (IsOpen != other.IsOpen) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -417,6 +431,7 @@ namespace Msg {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -438,6 +453,10 @@ namespace Msg {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
+      if (IsOpen != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsOpen);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -451,6 +470,9 @@ namespace Msg {
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (IsOpen != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -469,6 +491,9 @@ namespace Msg {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -486,6 +511,10 @@ namespace Msg {
           }
           case 18: {
             Name = input.ReadString();
+            break;
+          }
+          case 24: {
+            IsOpen = input.ReadBool();
             break;
           }
         }
@@ -808,6 +837,7 @@ namespace Msg {
       chapterId_ = other.chapterId_;
       earn_ = other.earn_ != null ? other.earn_.Clone() : null;
       expend_ = other.expend_ != null ? other.expend_.Clone() : null;
+      isOpen_ = other.isOpen_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -871,6 +901,17 @@ namespace Msg {
       }
     }
 
+    /// <summary>Field number for the "IsOpen" field.</summary>
+    public const int IsOpenFieldNumber = 6;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GuanKa);
@@ -889,6 +930,7 @@ namespace Msg {
       if (ChapterId != other.ChapterId) return false;
       if (!object.Equals(Earn, other.Earn)) return false;
       if (!object.Equals(Expend, other.Expend)) return false;
+      if (IsOpen != other.IsOpen) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -900,6 +942,7 @@ namespace Msg {
       if (ChapterId != 0) hash ^= ChapterId.GetHashCode();
       if (earn_ != null) hash ^= Earn.GetHashCode();
       if (expend_ != null) hash ^= Expend.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -933,6 +976,10 @@ namespace Msg {
         output.WriteRawTag(42);
         output.WriteMessage(Expend);
       }
+      if (IsOpen != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsOpen);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -955,6 +1002,9 @@ namespace Msg {
       }
       if (expend_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Expend);
+      }
+      if (IsOpen != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -987,6 +1037,9 @@ namespace Msg {
           expend_ = new global::Msg.Expend();
         }
         Expend.MergeFrom(other.Expend);
+      }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1023,6 +1076,10 @@ namespace Msg {
               expend_ = new global::Msg.Expend();
             }
             input.ReadMessage(expend_);
+            break;
+          }
+          case 48: {
+            IsOpen = input.ReadBool();
             break;
           }
         }
