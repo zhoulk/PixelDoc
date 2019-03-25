@@ -79,4 +79,7 @@ message Hero{
 	string PlayerId = 17;
 	bool IsSelect = 18;
 	int32 Pos = 19;
+	int32 MP = 20;
+	int32 MaxBlood = 21;
+	int32 MaxMP = 22;
 }

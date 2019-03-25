@@ -27,15 +27,15 @@ namespace Msg {
             "Cgtza2lsbC5wcm90bxIDbXNnGgllcnIucHJvdG8iDgoMU2tpbGxSZXF1ZXN0",
             "ImUKDVNraWxsUmVzcG9uc2USHwoEY29kZRgBIAEoDjIRLm1zZy5SZXNwb25z",
             "ZUNvZGUSFwoDZXJyGAIgASgLMgoubXNnLkVycm9yEhoKBnNraWxscxgDIAMo",
-            "CzIKLm1zZy5Ta2lsbCJMCgVTa2lsbBIKCgJJZBgBIAEoBRIMCgROYW1lGAIg",
+            "CzIKLm1zZy5Ta2lsbCJcCgVTa2lsbBIKCgJJZBgBIAEoBRIMCgROYW1lGAIg",
             "ASgJEg0KBUxldmVsGAMgASgFEgwKBFR5cGUYBCABKAUSDAoERGVzYxgFIAEo",
-            "CWIGcHJvdG8z"));
+            "CRIOCgZJc09wZW4YBiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.SkillRequest), global::Msg.SkillRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.SkillResponse), global::Msg.SkillResponse.Parser, new[]{ "Code", "Err", "Skills" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Skill), global::Msg.Skill.Parser, new[]{ "Id", "Name", "Level", "Type", "Desc" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Skill), global::Msg.Skill.Parser, new[]{ "Id", "Name", "Level", "Type", "Desc", "IsOpen" }, null, null, null)
           }));
     }
     #endregion
@@ -356,6 +356,7 @@ namespace Msg {
       level_ = other.level_;
       type_ = other.type_;
       desc_ = other.desc_;
+      isOpen_ = other.isOpen_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -419,6 +420,17 @@ namespace Msg {
       }
     }
 
+    /// <summary>Field number for the "IsOpen" field.</summary>
+    public const int IsOpenFieldNumber = 6;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Skill);
@@ -437,6 +449,7 @@ namespace Msg {
       if (Level != other.Level) return false;
       if (Type != other.Type) return false;
       if (Desc != other.Desc) return false;
+      if (IsOpen != other.IsOpen) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -448,6 +461,7 @@ namespace Msg {
       if (Level != 0) hash ^= Level.GetHashCode();
       if (Type != 0) hash ^= Type.GetHashCode();
       if (Desc.Length != 0) hash ^= Desc.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -481,6 +495,10 @@ namespace Msg {
         output.WriteRawTag(42);
         output.WriteString(Desc);
       }
+      if (IsOpen != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsOpen);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -503,6 +521,9 @@ namespace Msg {
       }
       if (Desc.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Desc);
+      }
+      if (IsOpen != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -529,6 +550,9 @@ namespace Msg {
       }
       if (other.Desc.Length != 0) {
         Desc = other.Desc;
+      }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -559,6 +583,10 @@ namespace Msg {
           }
           case 42: {
             Desc = input.ReadString();
+            break;
+          }
+          case 48: {
+            IsOpen = input.ReadBool();
             break;
           }
         }

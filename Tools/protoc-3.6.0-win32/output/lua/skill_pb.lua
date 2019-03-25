@@ -15,6 +15,7 @@ local SKILL_NAME_FIELD = protobuf.FieldDescriptor();
 local SKILL_LEVEL_FIELD = protobuf.FieldDescriptor();
 local SKILL_TYPE_FIELD = protobuf.FieldDescriptor();
 local SKILL_DESC_FIELD = protobuf.FieldDescriptor();
+local SKILL_ISOPEN_FIELD = protobuf.FieldDescriptor();
 
 SKILLREQUEST.name = "SkillRequest"
 SKILLREQUEST.full_name = ".msg.SkillRequest"
@@ -113,11 +114,21 @@ SKILL_DESC_FIELD.default_value = ""
 SKILL_DESC_FIELD.type = 9
 SKILL_DESC_FIELD.cpp_type = 9
 
+SKILL_ISOPEN_FIELD.name = "IsOpen"
+SKILL_ISOPEN_FIELD.full_name = ".msg.Skill.IsOpen"
+SKILL_ISOPEN_FIELD.number = 6
+SKILL_ISOPEN_FIELD.index = 5
+SKILL_ISOPEN_FIELD.label = 1
+SKILL_ISOPEN_FIELD.has_default_value = false
+SKILL_ISOPEN_FIELD.default_value = false
+SKILL_ISOPEN_FIELD.type = 8
+SKILL_ISOPEN_FIELD.cpp_type = 7
+
 SKILL.name = "Skill"
 SKILL.full_name = ".msg.Skill"
 SKILL.nested_types = {}
 SKILL.enum_types = {}
-SKILL.fields = {SKILL_ID_FIELD, SKILL_NAME_FIELD, SKILL_LEVEL_FIELD, SKILL_TYPE_FIELD, SKILL_DESC_FIELD}
+SKILL.fields = {SKILL_ID_FIELD, SKILL_NAME_FIELD, SKILL_LEVEL_FIELD, SKILL_TYPE_FIELD, SKILL_DESC_FIELD, SKILL_ISOPEN_FIELD}
 SKILL.is_extendable = false
 SKILL.extensions = {}
 

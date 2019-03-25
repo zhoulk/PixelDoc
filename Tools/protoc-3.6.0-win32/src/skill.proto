@@ -18,5 +18,6 @@ message Skill{
 	string Name  = 2;
     int32  Level = 3;
 	int32  Type       =4;
-	string Desc = 5;
+    string Desc = 5;
+    bool IsOpen = 6;
 }
