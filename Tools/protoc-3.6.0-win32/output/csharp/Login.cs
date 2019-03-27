@@ -33,9 +33,10 @@ namespace Msg {
             "MhEubXNnLlJlc3BvbnNlQ29kZRIXCgNlcnIYAiABKAsyCi5tc2cuRXJyb3IS",
             "GwoGcGxheWVyGAMgASgLMgsubXNnLlBsYXllciJHCgZQbGF5ZXISDgoGVXNl",
             "cklkGAEgASgJEgwKBE5hbWUYAiABKAkSHwoIQmFzZUluZm8YAyABKAsyDS5t",
-            "c2cuQmFzZUluZm8iVAoIQmFzZUluZm8SDAoER29sZBgBIAEoBRIPCgdEaWFt",
+            "c2cuQmFzZUluZm8iegoIQmFzZUluZm8SDAoER29sZBgBIAEoBRIPCgdEaWFt",
             "b25kGAIgASgFEgsKA0V4cBgDIAEoBRINCgVQb3dlchgEIAEoBRINCgVMZXZl",
-            "bBgFIAEoBWIGcHJvdG8z"));
+            "bBgFIAEoBRISCgpMZXZlbFVwRXhwGAYgASgFEhAKCE1heFBvd2VyGAcgASgF",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -44,7 +45,7 @@ namespace Msg {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.RegisteRequest), global::Msg.RegisteRequest.Parser, new[]{ "Account", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.RegisteResponse), global::Msg.RegisteResponse.Parser, new[]{ "Code", "Err", "Player" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Player), global::Msg.Player.Parser, new[]{ "UserId", "Name", "BaseInfo" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.BaseInfo), global::Msg.BaseInfo.Parser, new[]{ "Gold", "Diamond", "Exp", "Power", "Level" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.BaseInfo), global::Msg.BaseInfo.Parser, new[]{ "Gold", "Diamond", "Exp", "Power", "Level", "LevelUpExp", "MaxPower" }, null, null, null)
           }));
     }
     #endregion
@@ -986,6 +987,8 @@ namespace Msg {
       exp_ = other.exp_;
       power_ = other.power_;
       level_ = other.level_;
+      levelUpExp_ = other.levelUpExp_;
+      maxPower_ = other.maxPower_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1049,6 +1052,28 @@ namespace Msg {
       }
     }
 
+    /// <summary>Field number for the "LevelUpExp" field.</summary>
+    public const int LevelUpExpFieldNumber = 6;
+    private int levelUpExp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelUpExp {
+      get { return levelUpExp_; }
+      set {
+        levelUpExp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "MaxPower" field.</summary>
+    public const int MaxPowerFieldNumber = 7;
+    private int maxPower_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MaxPower {
+      get { return maxPower_; }
+      set {
+        maxPower_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BaseInfo);
@@ -1067,6 +1092,8 @@ namespace Msg {
       if (Exp != other.Exp) return false;
       if (Power != other.Power) return false;
       if (Level != other.Level) return false;
+      if (LevelUpExp != other.LevelUpExp) return false;
+      if (MaxPower != other.MaxPower) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1078,6 +1105,8 @@ namespace Msg {
       if (Exp != 0) hash ^= Exp.GetHashCode();
       if (Power != 0) hash ^= Power.GetHashCode();
       if (Level != 0) hash ^= Level.GetHashCode();
+      if (LevelUpExp != 0) hash ^= LevelUpExp.GetHashCode();
+      if (MaxPower != 0) hash ^= MaxPower.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1111,6 +1140,14 @@ namespace Msg {
         output.WriteRawTag(40);
         output.WriteInt32(Level);
       }
+      if (LevelUpExp != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(LevelUpExp);
+      }
+      if (MaxPower != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(MaxPower);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1133,6 +1170,12 @@ namespace Msg {
       }
       if (Level != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (LevelUpExp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LevelUpExp);
+      }
+      if (MaxPower != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxPower);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1159,6 +1202,12 @@ namespace Msg {
       }
       if (other.Level != 0) {
         Level = other.Level;
+      }
+      if (other.LevelUpExp != 0) {
+        LevelUpExp = other.LevelUpExp;
+      }
+      if (other.MaxPower != 0) {
+        MaxPower = other.MaxPower;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1189,6 +1238,14 @@ namespace Msg {
           }
           case 40: {
             Level = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            LevelUpExp = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            MaxPower = input.ReadInt32();
             break;
           }
         }

@@ -27,16 +27,17 @@ namespace Msg {
             "CgppdGVtLnByb3RvEgNtc2caCWVyci5wcm90byINCgtJdGVtUmVxdWVzdCJi",
             "CgxJdGVtUmVzcG9uc2USHwoEY29kZRgBIAEoDjIRLm1zZy5SZXNwb25zZUNv",
             "ZGUSFwoDZXJyGAIgASgLMgoubXNnLkVycm9yEhgKBWl0ZW1zGAMgAygLMgku",
-            "bXNnLkl0ZW0iZQoESXRlbRIKCgJJZBgBIAEoBRIMCgROYW1lGAIgASgJEg0K",
-            "BVByaWNlGAMgASgFEg4KBkVmZmVjdBgEIAEoCRIMCgREZXNjGAUgASgJEhYK",
-            "BE1peHMYBiADKAsyCC5tc2cuTWl4IiIKA01peBIOCgZJdGVtSWQYASABKAUS",
-            "CwoDTnVtGAIgASgFYgZwcm90bzM="));
+            "bXNnLkl0ZW0ihQEKBEl0ZW0SCgoCSWQYASABKAUSDAoETmFtZRgCIAEoCRIN",
+            "CgVQcmljZRgDIAEoBRIOCgZFZmZlY3QYBCABKAkSDAoERGVzYxgFIAEoCRIW",
+            "CgRNaXhzGAYgAygLMggubXNnLk1peBIOCgZJdGVtSWQYByABKAkSDgoGSGVy",
+            "b0lkGAggASgJIiIKA01peBIOCgZJdGVtSWQYASABKAUSCwoDTnVtGAIgASgF",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ItemRequest), global::Msg.ItemRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ItemResponse), global::Msg.ItemResponse.Parser, new[]{ "Code", "Err", "Items" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Item), global::Msg.Item.Parser, new[]{ "Id", "Name", "Price", "Effect", "Desc", "Mixs" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Item), global::Msg.Item.Parser, new[]{ "Id", "Name", "Price", "Effect", "Desc", "Mixs", "ItemId", "HeroId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Mix), global::Msg.Mix.Parser, new[]{ "ItemId", "Num" }, null, null, null)
           }));
     }
@@ -359,6 +360,8 @@ namespace Msg {
       effect_ = other.effect_;
       desc_ = other.desc_;
       mixs_ = other.mixs_.Clone();
+      itemId_ = other.itemId_;
+      heroId_ = other.heroId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -432,6 +435,28 @@ namespace Msg {
       get { return mixs_; }
     }
 
+    /// <summary>Field number for the "ItemId" field.</summary>
+    public const int ItemIdFieldNumber = 7;
+    private string itemId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ItemId {
+      get { return itemId_; }
+      set {
+        itemId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "HeroId" field.</summary>
+    public const int HeroIdFieldNumber = 8;
+    private string heroId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string HeroId {
+      get { return heroId_; }
+      set {
+        heroId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Item);
@@ -451,6 +476,8 @@ namespace Msg {
       if (Effect != other.Effect) return false;
       if (Desc != other.Desc) return false;
       if(!mixs_.Equals(other.mixs_)) return false;
+      if (ItemId != other.ItemId) return false;
+      if (HeroId != other.HeroId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -463,6 +490,8 @@ namespace Msg {
       if (Effect.Length != 0) hash ^= Effect.GetHashCode();
       if (Desc.Length != 0) hash ^= Desc.GetHashCode();
       hash ^= mixs_.GetHashCode();
+      if (ItemId.Length != 0) hash ^= ItemId.GetHashCode();
+      if (HeroId.Length != 0) hash ^= HeroId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -497,6 +526,14 @@ namespace Msg {
         output.WriteString(Desc);
       }
       mixs_.WriteTo(output, _repeated_mixs_codec);
+      if (ItemId.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(ItemId);
+      }
+      if (HeroId.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(HeroId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -521,6 +558,12 @@ namespace Msg {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Desc);
       }
       size += mixs_.CalculateSize(_repeated_mixs_codec);
+      if (ItemId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ItemId);
+      }
+      if (HeroId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(HeroId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -548,6 +591,12 @@ namespace Msg {
         Desc = other.Desc;
       }
       mixs_.Add(other.mixs_);
+      if (other.ItemId.Length != 0) {
+        ItemId = other.ItemId;
+      }
+      if (other.HeroId.Length != 0) {
+        HeroId = other.HeroId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -581,6 +630,14 @@ namespace Msg {
           }
           case 50: {
             mixs_.AddEntriesFrom(input, _repeated_mixs_codec);
+            break;
+          }
+          case 58: {
+            ItemId = input.ReadString();
+            break;
+          }
+          case 66: {
+            HeroId = input.ReadString();
             break;
           }
         }

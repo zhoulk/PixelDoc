@@ -2,6 +2,8 @@ syntax = "proto3";
 package msg;
 
 import "err.proto";
+import "skill.proto";
+import "item.proto";
 
 message HeroRequest{
 
@@ -59,6 +61,26 @@ message HeroUnSelectResponse{
     repeated string heroIds = 3;
 }
 
+message HeroSkillsRequest{
+	string heroId = 1;
+}
+
+message HeroSkillsResponse{
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated Skill skills = 3;
+}
+
+message HeroItemsRequest{
+	string heroId = 1;
+}
+
+message HeroItemsResponse{
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated Item items = 3;
+}
+
 message Hero{
     int32 Id    = 1;
 	string Name  = 2;
@@ -82,4 +104,8 @@ message Hero{
 	int32 MP = 20;
 	int32 MaxBlood = 21;
 	int32 MaxMP = 22;
+	int32 SkillPoint = 23;
+	int32 Exp = 24;
+	int32 LevelUpExp = 25;
+	repeated string ItemIds = 26;
 }

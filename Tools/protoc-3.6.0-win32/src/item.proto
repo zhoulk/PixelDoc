@@ -20,6 +20,9 @@ message Item {
 	string Effect = 4;
 	string Desc   =5;
 	repeated Mix Mixs  = 6;
+
+	string ItemId = 7;
+	string HeroId = 8;
 }
 
 message Mix {

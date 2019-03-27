@@ -27,15 +27,20 @@ namespace Msg {
             "Cgtza2lsbC5wcm90bxIDbXNnGgllcnIucHJvdG8iDgoMU2tpbGxSZXF1ZXN0",
             "ImUKDVNraWxsUmVzcG9uc2USHwoEY29kZRgBIAEoDjIRLm1zZy5SZXNwb25z",
             "ZUNvZGUSFwoDZXJyGAIgASgLMgoubXNnLkVycm9yEhoKBnNraWxscxgDIAMo",
-            "CzIKLm1zZy5Ta2lsbCJcCgVTa2lsbBIKCgJJZBgBIAEoBRIMCgROYW1lGAIg",
-            "ASgJEg0KBUxldmVsGAMgASgFEgwKBFR5cGUYBCABKAUSDAoERGVzYxgFIAEo",
-            "CRIOCgZJc09wZW4YBiABKAhiBnByb3RvMw=="));
+            "CzIKLm1zZy5Ta2lsbCImChNTa2lsbFVwZ3JhZGVSZXF1ZXN0Eg8KB3NraWxs",
+            "SWQYASABKAkiUAoUU2tpbGxVcGdyYWRlUmVzcG9uc2USHwoEY29kZRgBIAEo",
+            "DjIRLm1zZy5SZXNwb25zZUNvZGUSFwoDZXJyGAIgASgLMgoubXNnLkVycm9y",
+            "In0KBVNraWxsEgoKAklkGAEgASgFEgwKBE5hbWUYAiABKAkSDQoFTGV2ZWwY",
+            "AyABKAUSDAoEVHlwZRgEIAEoBRIMCgREZXNjGAUgASgJEg4KBklzT3BlbhgG",
+            "IAEoCBIPCgdTa2lsbElkGAcgASgJEg4KBkhlcm9JZBgIIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.SkillRequest), global::Msg.SkillRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.SkillResponse), global::Msg.SkillResponse.Parser, new[]{ "Code", "Err", "Skills" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Skill), global::Msg.Skill.Parser, new[]{ "Id", "Name", "Level", "Type", "Desc", "IsOpen" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.SkillUpgradeRequest), global::Msg.SkillUpgradeRequest.Parser, new[]{ "SkillId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.SkillUpgradeResponse), global::Msg.SkillUpgradeResponse.Parser, new[]{ "Code", "Err" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Skill), global::Msg.Skill.Parser, new[]{ "Id", "Name", "Level", "Type", "Desc", "IsOpen", "SkillId", "HeroId" }, null, null, null)
           }));
     }
     #endregion
@@ -326,6 +331,298 @@ namespace Msg {
 
   }
 
+  public sealed partial class SkillUpgradeRequest : pb::IMessage<SkillUpgradeRequest> {
+    private static readonly pb::MessageParser<SkillUpgradeRequest> _parser = new pb::MessageParser<SkillUpgradeRequest>(() => new SkillUpgradeRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SkillUpgradeRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Msg.SkillReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SkillUpgradeRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SkillUpgradeRequest(SkillUpgradeRequest other) : this() {
+      skillId_ = other.skillId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SkillUpgradeRequest Clone() {
+      return new SkillUpgradeRequest(this);
+    }
+
+    /// <summary>Field number for the "skillId" field.</summary>
+    public const int SkillIdFieldNumber = 1;
+    private string skillId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SkillUpgradeRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SkillUpgradeRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SkillId != other.SkillId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SkillId.Length != 0) hash ^= SkillId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (SkillId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(SkillId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (SkillId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SkillId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SkillUpgradeRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SkillId.Length != 0) {
+        SkillId = other.SkillId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            SkillId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SkillUpgradeResponse : pb::IMessage<SkillUpgradeResponse> {
+    private static readonly pb::MessageParser<SkillUpgradeResponse> _parser = new pb::MessageParser<SkillUpgradeResponse>(() => new SkillUpgradeResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SkillUpgradeResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Msg.SkillReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SkillUpgradeResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SkillUpgradeResponse(SkillUpgradeResponse other) : this() {
+      code_ = other.code_;
+      err_ = other.err_ != null ? other.err_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SkillUpgradeResponse Clone() {
+      return new SkillUpgradeResponse(this);
+    }
+
+    /// <summary>Field number for the "code" field.</summary>
+    public const int CodeFieldNumber = 1;
+    private global::Msg.ResponseCode code_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Msg.ResponseCode Code {
+      get { return code_; }
+      set {
+        code_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "err" field.</summary>
+    public const int ErrFieldNumber = 2;
+    private global::Msg.Error err_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Msg.Error Err {
+      get { return err_; }
+      set {
+        err_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SkillUpgradeResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SkillUpgradeResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Code != other.Code) return false;
+      if (!object.Equals(Err, other.Err)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Code != 0) hash ^= Code.GetHashCode();
+      if (err_ != null) hash ^= Err.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Code != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Code);
+      }
+      if (err_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Err);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Code != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Code);
+      }
+      if (err_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Err);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SkillUpgradeResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Code != 0) {
+        Code = other.Code;
+      }
+      if (other.err_ != null) {
+        if (err_ == null) {
+          err_ = new global::Msg.Error();
+        }
+        Err.MergeFrom(other.Err);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            code_ = (global::Msg.ResponseCode) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            if (err_ == null) {
+              err_ = new global::Msg.Error();
+            }
+            input.ReadMessage(err_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class Skill : pb::IMessage<Skill> {
     private static readonly pb::MessageParser<Skill> _parser = new pb::MessageParser<Skill>(() => new Skill());
     private pb::UnknownFieldSet _unknownFields;
@@ -334,7 +631,7 @@ namespace Msg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Msg.SkillReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Msg.SkillReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -357,6 +654,8 @@ namespace Msg {
       type_ = other.type_;
       desc_ = other.desc_;
       isOpen_ = other.isOpen_;
+      skillId_ = other.skillId_;
+      heroId_ = other.heroId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -431,6 +730,28 @@ namespace Msg {
       }
     }
 
+    /// <summary>Field number for the "SkillId" field.</summary>
+    public const int SkillIdFieldNumber = 7;
+    private string skillId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "HeroId" field.</summary>
+    public const int HeroIdFieldNumber = 8;
+    private string heroId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string HeroId {
+      get { return heroId_; }
+      set {
+        heroId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Skill);
@@ -450,6 +771,8 @@ namespace Msg {
       if (Type != other.Type) return false;
       if (Desc != other.Desc) return false;
       if (IsOpen != other.IsOpen) return false;
+      if (SkillId != other.SkillId) return false;
+      if (HeroId != other.HeroId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -462,6 +785,8 @@ namespace Msg {
       if (Type != 0) hash ^= Type.GetHashCode();
       if (Desc.Length != 0) hash ^= Desc.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      if (SkillId.Length != 0) hash ^= SkillId.GetHashCode();
+      if (HeroId.Length != 0) hash ^= HeroId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -499,6 +824,14 @@ namespace Msg {
         output.WriteRawTag(48);
         output.WriteBool(IsOpen);
       }
+      if (SkillId.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(SkillId);
+      }
+      if (HeroId.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(HeroId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -524,6 +857,12 @@ namespace Msg {
       }
       if (IsOpen != false) {
         size += 1 + 1;
+      }
+      if (SkillId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SkillId);
+      }
+      if (HeroId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(HeroId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -553,6 +892,12 @@ namespace Msg {
       }
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
+      }
+      if (other.SkillId.Length != 0) {
+        SkillId = other.SkillId;
+      }
+      if (other.HeroId.Length != 0) {
+        HeroId = other.HeroId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -587,6 +932,14 @@ namespace Msg {
           }
           case 48: {
             IsOpen = input.ReadBool();
+            break;
+          }
+          case 58: {
+            SkillId = input.ReadString();
+            break;
+          }
+          case 66: {
+            HeroId = input.ReadString();
             break;
           }
         }

@@ -40,4 +40,6 @@ message BaseInfo {
 	int32 Exp     = 3;
 	int32 Power   = 4;
 	int32 Level   = 5;
+	int32 LevelUpExp = 6;
+	int32 MaxPower = 7;
 }

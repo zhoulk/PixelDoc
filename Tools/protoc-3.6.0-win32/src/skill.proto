@@ -13,6 +13,15 @@ message SkillResponse {
     repeated Skill skills = 3;
 }
 
+message SkillUpgradeRequest{
+	string skillId = 1;
+}
+
+message SkillUpgradeResponse{
+	ResponseCode code = 1;
+    Error err = 2;
+}
+
 message Skill{
     int32 Id    = 1;
 	string Name  = 2;
@@ -20,4 +29,6 @@ message Skill{
 	int32  Type       =4;
     string Desc = 5;
     bool IsOpen = 6;
+    string SkillId = 7;
+    string HeroId = 8;
 }
