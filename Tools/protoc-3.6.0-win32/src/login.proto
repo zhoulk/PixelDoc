@@ -27,6 +27,16 @@ message RegisteResponse {
 	Player player = 3;
 }
 
+//大区列表
+message ZoneRequest{
+}
+
+message ZoneResponse{
+	ResponseCode code = 1;
+	Error err = 2;
+	repeated Zone zones = 3;
+}
+
 message Player {
 	string UserId  = 1;
 	string Name    = 2;
@@ -42,4 +52,10 @@ message BaseInfo {
 	int32 Level   = 5;
 	int32 LevelUpExp = 6;
 	int32 MaxPower = 7;
+}
+
+message Zone {
+	string Id = 1;
+	string Name = 2;
+	bool IsNew  = 3;  
 }

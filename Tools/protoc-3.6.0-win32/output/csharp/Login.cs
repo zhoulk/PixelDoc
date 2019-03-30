@@ -31,12 +31,15 @@ namespace Msg {
             "YXllciIzCg5SZWdpc3RlUmVxdWVzdBIPCgdhY2NvdW50GAEgASgJEhAKCHBh",
             "c3N3b3JkGAIgASgJImgKD1JlZ2lzdGVSZXNwb25zZRIfCgRjb2RlGAEgASgO",
             "MhEubXNnLlJlc3BvbnNlQ29kZRIXCgNlcnIYAiABKAsyCi5tc2cuRXJyb3IS",
-            "GwoGcGxheWVyGAMgASgLMgsubXNnLlBsYXllciJHCgZQbGF5ZXISDgoGVXNl",
-            "cklkGAEgASgJEgwKBE5hbWUYAiABKAkSHwoIQmFzZUluZm8YAyABKAsyDS5t",
-            "c2cuQmFzZUluZm8iegoIQmFzZUluZm8SDAoER29sZBgBIAEoBRIPCgdEaWFt",
-            "b25kGAIgASgFEgsKA0V4cBgDIAEoBRINCgVQb3dlchgEIAEoBRINCgVMZXZl",
-            "bBgFIAEoBRISCgpMZXZlbFVwRXhwGAYgASgFEhAKCE1heFBvd2VyGAcgASgF",
-            "YgZwcm90bzM="));
+            "GwoGcGxheWVyGAMgASgLMgsubXNnLlBsYXllciINCgtab25lUmVxdWVzdCJi",
+            "Cgxab25lUmVzcG9uc2USHwoEY29kZRgBIAEoDjIRLm1zZy5SZXNwb25zZUNv",
+            "ZGUSFwoDZXJyGAIgASgLMgoubXNnLkVycm9yEhgKBXpvbmVzGAMgAygLMgku",
+            "bXNnLlpvbmUiRwoGUGxheWVyEg4KBlVzZXJJZBgBIAEoCRIMCgROYW1lGAIg",
+            "ASgJEh8KCEJhc2VJbmZvGAMgASgLMg0ubXNnLkJhc2VJbmZvInoKCEJhc2VJ",
+            "bmZvEgwKBEdvbGQYASABKAUSDwoHRGlhbW9uZBgCIAEoBRILCgNFeHAYAyAB",
+            "KAUSDQoFUG93ZXIYBCABKAUSDQoFTGV2ZWwYBSABKAUSEgoKTGV2ZWxVcEV4",
+            "cBgGIAEoBRIQCghNYXhQb3dlchgHIAEoBSIvCgRab25lEgoKAklkGAEgASgJ",
+            "EgwKBE5hbWUYAiABKAkSDQoFSXNOZXcYAyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -44,8 +47,11 @@ namespace Msg {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.LoginResponse), global::Msg.LoginResponse.Parser, new[]{ "Code", "Err", "Player" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.RegisteRequest), global::Msg.RegisteRequest.Parser, new[]{ "Account", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.RegisteResponse), global::Msg.RegisteResponse.Parser, new[]{ "Code", "Err", "Player" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ZoneRequest), global::Msg.ZoneRequest.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ZoneResponse), global::Msg.ZoneResponse.Parser, new[]{ "Code", "Err", "Zones" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Player), global::Msg.Player.Parser, new[]{ "UserId", "Name", "BaseInfo" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.BaseInfo), global::Msg.BaseInfo.Parser, new[]{ "Gold", "Diamond", "Exp", "Power", "Level", "LevelUpExp", "MaxPower" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.BaseInfo), global::Msg.BaseInfo.Parser, new[]{ "Gold", "Diamond", "Exp", "Power", "Level", "LevelUpExp", "MaxPower" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Zone), global::Msg.Zone.Parser, new[]{ "Id", "Name", "IsNew" }, null, null, null)
           }));
     }
     #endregion
@@ -766,6 +772,293 @@ namespace Msg {
 
   }
 
+  /// <summary>
+  ///大区列表
+  /// </summary>
+  public sealed partial class ZoneRequest : pb::IMessage<ZoneRequest> {
+    private static readonly pb::MessageParser<ZoneRequest> _parser = new pb::MessageParser<ZoneRequest>(() => new ZoneRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ZoneRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Msg.LoginReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZoneRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZoneRequest(ZoneRequest other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZoneRequest Clone() {
+      return new ZoneRequest(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ZoneRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ZoneRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ZoneRequest other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class ZoneResponse : pb::IMessage<ZoneResponse> {
+    private static readonly pb::MessageParser<ZoneResponse> _parser = new pb::MessageParser<ZoneResponse>(() => new ZoneResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ZoneResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Msg.LoginReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZoneResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZoneResponse(ZoneResponse other) : this() {
+      code_ = other.code_;
+      err_ = other.err_ != null ? other.err_.Clone() : null;
+      zones_ = other.zones_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZoneResponse Clone() {
+      return new ZoneResponse(this);
+    }
+
+    /// <summary>Field number for the "code" field.</summary>
+    public const int CodeFieldNumber = 1;
+    private global::Msg.ResponseCode code_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Msg.ResponseCode Code {
+      get { return code_; }
+      set {
+        code_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "err" field.</summary>
+    public const int ErrFieldNumber = 2;
+    private global::Msg.Error err_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Msg.Error Err {
+      get { return err_; }
+      set {
+        err_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "zones" field.</summary>
+    public const int ZonesFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Msg.Zone> _repeated_zones_codec
+        = pb::FieldCodec.ForMessage(26, global::Msg.Zone.Parser);
+    private readonly pbc::RepeatedField<global::Msg.Zone> zones_ = new pbc::RepeatedField<global::Msg.Zone>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Msg.Zone> Zones {
+      get { return zones_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ZoneResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ZoneResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Code != other.Code) return false;
+      if (!object.Equals(Err, other.Err)) return false;
+      if(!zones_.Equals(other.zones_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Code != 0) hash ^= Code.GetHashCode();
+      if (err_ != null) hash ^= Err.GetHashCode();
+      hash ^= zones_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Code != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Code);
+      }
+      if (err_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Err);
+      }
+      zones_.WriteTo(output, _repeated_zones_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Code != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Code);
+      }
+      if (err_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Err);
+      }
+      size += zones_.CalculateSize(_repeated_zones_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ZoneResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Code != 0) {
+        Code = other.Code;
+      }
+      if (other.err_ != null) {
+        if (err_ == null) {
+          err_ = new global::Msg.Error();
+        }
+        Err.MergeFrom(other.Err);
+      }
+      zones_.Add(other.zones_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            code_ = (global::Msg.ResponseCode) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            if (err_ == null) {
+              err_ = new global::Msg.Error();
+            }
+            input.ReadMessage(err_);
+            break;
+          }
+          case 26: {
+            zones_.AddEntriesFrom(input, _repeated_zones_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class Player : pb::IMessage<Player> {
     private static readonly pb::MessageParser<Player> _parser = new pb::MessageParser<Player>(() => new Player());
     private pb::UnknownFieldSet _unknownFields;
@@ -774,7 +1067,7 @@ namespace Msg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Msg.LoginReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Msg.LoginReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -965,7 +1258,7 @@ namespace Msg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Msg.LoginReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Msg.LoginReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1246,6 +1539,191 @@ namespace Msg {
           }
           case 56: {
             MaxPower = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Zone : pb::IMessage<Zone> {
+    private static readonly pb::MessageParser<Zone> _parser = new pb::MessageParser<Zone>(() => new Zone());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Zone> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Msg.LoginReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Zone() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Zone(Zone other) : this() {
+      id_ = other.id_;
+      name_ = other.name_;
+      isNew_ = other.isNew_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Zone Clone() {
+      return new Zone(this);
+    }
+
+    /// <summary>Field number for the "Id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "IsNew" field.</summary>
+    public const int IsNewFieldNumber = 3;
+    private bool isNew_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsNew {
+      get { return isNew_; }
+      set {
+        isNew_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Zone);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Zone other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (IsNew != other.IsNew) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (IsNew != false) hash ^= IsNew.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (IsNew != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsNew);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (IsNew != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Zone other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.IsNew != false) {
+        IsNew = other.IsNew;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 24: {
+            IsNew = input.ReadBool();
             break;
           }
         }
