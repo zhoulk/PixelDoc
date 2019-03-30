@@ -27,7 +27,8 @@ message HeroRandomRequest{
 
 message HeroRandomResponse {
 	ResponseCode code = 1;
-    Error err = 2;
+	Error err = 2;
+	Hero hero = 3;
 }
 
 message HeroOwnRequest{
