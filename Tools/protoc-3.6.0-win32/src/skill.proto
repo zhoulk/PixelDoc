@@ -20,6 +20,7 @@ message SkillUpgradeRequest{
 message SkillUpgradeResponse{
 	ResponseCode code = 1;
     Error err = 2;
+    Skill skill = 3;
 }
 
 message Skill{
@@ -31,4 +32,5 @@ message Skill{
     bool IsOpen = 6;
     string SkillId = 7;
     string HeroId = 8;
+    repeated string LevelDesc = 9;
 }
