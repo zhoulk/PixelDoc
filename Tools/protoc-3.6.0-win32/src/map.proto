@@ -17,6 +17,9 @@ message Chapter {
     int32 Id   = 1;
 	string Name  = 2;
 	bool IsOpen = 3;
+	int32 Star = 4;
+	int32 Status = 5;
+	int32 GuanKaNum = 6;
 }
 
 message GuanKaRequest{

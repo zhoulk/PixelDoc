@@ -27,22 +27,23 @@ namespace Msg {
             "CgltYXAucHJvdG8SA21zZxoJZXJyLnByb3RvIhAKDkNoYXB0ZXJSZXF1ZXN0",
             "ImsKD0NoYXB0ZXJSZXNwb25zZRIfCgRjb2RlGAEgASgOMhEubXNnLlJlc3Bv",
             "bnNlQ29kZRIXCgNlcnIYAiABKAsyCi5tc2cuRXJyb3ISHgoIY2hhcHRlcnMY",
-            "AyADKAsyDC5tc2cuQ2hhcHRlciIzCgdDaGFwdGVyEgoKAklkGAEgASgFEgwK",
-            "BE5hbWUYAiABKAkSDgoGSXNPcGVuGAMgASgIIg8KDUd1YW5LYVJlcXVlc3Qi",
-            "aAoOR3VhbkthUmVzcG9uc2USHwoEY29kZRgBIAEoDjIRLm1zZy5SZXNwb25z",
-            "ZUNvZGUSFwoDZXJyGAIgASgLMgoubXNnLkVycm9yEhwKB2d1YW5LYXMYAyAD",
-            "KAsyCy5tc2cuR3VhbkthInsKBkd1YW5LYRIKCgJJZBgBIAEoBRIMCgROYW1l",
-            "GAIgASgJEhEKCUNoYXB0ZXJJZBgDIAEoBRIXCgRFYXJuGAQgASgLMgkubXNn",
-            "LkVhcm4SGwoGRXhwZW5kGAUgASgLMgsubXNnLkV4cGVuZBIOCgZJc09wZW4Y",
-            "BiABKAgiSQoERWFybhIPCgdJdGVtSWRzGAEgAygJEg8KB0hlcm9FeHAYAiAB",
-            "KAUSEQoJUGxheWVyRXhwGAMgASgFEgwKBEdvbGQYBCABKAUiFwoGRXhwZW5k",
-            "Eg0KBVBvd2VyGAEgASgFYgZwcm90bzM="));
+            "AyADKAsyDC5tc2cuQ2hhcHRlciJkCgdDaGFwdGVyEgoKAklkGAEgASgFEgwK",
+            "BE5hbWUYAiABKAkSDgoGSXNPcGVuGAMgASgIEgwKBFN0YXIYBCABKAUSDgoG",
+            "U3RhdHVzGAUgASgFEhEKCUd1YW5LYU51bRgGIAEoBSIPCg1HdWFuS2FSZXF1",
+            "ZXN0ImgKDkd1YW5LYVJlc3BvbnNlEh8KBGNvZGUYASABKA4yES5tc2cuUmVz",
+            "cG9uc2VDb2RlEhcKA2VychgCIAEoCzIKLm1zZy5FcnJvchIcCgdndWFuS2Fz",
+            "GAMgAygLMgsubXNnLkd1YW5LYSJ7CgZHdWFuS2ESCgoCSWQYASABKAUSDAoE",
+            "TmFtZRgCIAEoCRIRCglDaGFwdGVySWQYAyABKAUSFwoERWFybhgEIAEoCzIJ",
+            "Lm1zZy5FYXJuEhsKBkV4cGVuZBgFIAEoCzILLm1zZy5FeHBlbmQSDgoGSXNP",
+            "cGVuGAYgASgIIkkKBEVhcm4SDwoHSXRlbUlkcxgBIAMoCRIPCgdIZXJvRXhw",
+            "GAIgASgFEhEKCVBsYXllckV4cBgDIAEoBRIMCgRHb2xkGAQgASgFIhcKBkV4",
+            "cGVuZBINCgVQb3dlchgBIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ChapterRequest), global::Msg.ChapterRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ChapterResponse), global::Msg.ChapterResponse.Parser, new[]{ "Code", "Err", "Chapters" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Chapter), global::Msg.Chapter.Parser, new[]{ "Id", "Name", "IsOpen" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Chapter), global::Msg.Chapter.Parser, new[]{ "Id", "Name", "IsOpen", "Star", "Status", "GuanKaNum" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GuanKaRequest), global::Msg.GuanKaRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GuanKaResponse), global::Msg.GuanKaResponse.Parser, new[]{ "Code", "Err", "GuanKas" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GuanKa), global::Msg.GuanKa.Parser, new[]{ "Id", "Name", "ChapterId", "Earn", "Expend", "IsOpen" }, null, null, null),
@@ -366,6 +367,9 @@ namespace Msg {
       id_ = other.id_;
       name_ = other.name_;
       isOpen_ = other.isOpen_;
+      star_ = other.star_;
+      status_ = other.status_;
+      guanKaNum_ = other.guanKaNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -407,6 +411,39 @@ namespace Msg {
       }
     }
 
+    /// <summary>Field number for the "Star" field.</summary>
+    public const int StarFieldNumber = 4;
+    private int star_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Star {
+      get { return star_; }
+      set {
+        star_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Status" field.</summary>
+    public const int StatusFieldNumber = 5;
+    private int status_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "GuanKaNum" field.</summary>
+    public const int GuanKaNumFieldNumber = 6;
+    private int guanKaNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int GuanKaNum {
+      get { return guanKaNum_; }
+      set {
+        guanKaNum_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Chapter);
@@ -423,6 +460,9 @@ namespace Msg {
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
       if (IsOpen != other.IsOpen) return false;
+      if (Star != other.Star) return false;
+      if (Status != other.Status) return false;
+      if (GuanKaNum != other.GuanKaNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -432,6 +472,9 @@ namespace Msg {
       if (Id != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      if (Star != 0) hash ^= Star.GetHashCode();
+      if (Status != 0) hash ^= Status.GetHashCode();
+      if (GuanKaNum != 0) hash ^= GuanKaNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -457,6 +500,18 @@ namespace Msg {
         output.WriteRawTag(24);
         output.WriteBool(IsOpen);
       }
+      if (Star != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Star);
+      }
+      if (Status != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Status);
+      }
+      if (GuanKaNum != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(GuanKaNum);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -473,6 +528,15 @@ namespace Msg {
       }
       if (IsOpen != false) {
         size += 1 + 1;
+      }
+      if (Star != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Star);
+      }
+      if (Status != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Status);
+      }
+      if (GuanKaNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GuanKaNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -493,6 +557,15 @@ namespace Msg {
       }
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
+      }
+      if (other.Star != 0) {
+        Star = other.Star;
+      }
+      if (other.Status != 0) {
+        Status = other.Status;
+      }
+      if (other.GuanKaNum != 0) {
+        GuanKaNum = other.GuanKaNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -515,6 +588,18 @@ namespace Msg {
           }
           case 24: {
             IsOpen = input.ReadBool();
+            break;
+          }
+          case 32: {
+            Star = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Status = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            GuanKaNum = input.ReadInt32();
             break;
           }
         }
