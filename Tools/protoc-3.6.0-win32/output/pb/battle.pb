@@ -1,6 +1,18 @@
 
-ÿ
-battle.protomsg	err.proto	map.proto"1
+™
+battle.protomsg	err.proto	map.proto
+hero.protoskill.proto
+item.proto"0
+BattleStartRequest
+battleId (	RbattleId"À
+BattleStartResponse%
+code (2.msg.ResponseCodeRcode
+err (2
+.msg.ErrorRerr
+heros (2	.msg.HeroRheros"
+skills (2
+.msg.SkillRskills
+items (2	.msg.ItemRitems"1
 BattleGuanKaRequest
 guanKaId (RguanKaId"˜
 BattleGuanKaResponse%

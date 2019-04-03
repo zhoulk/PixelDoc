@@ -3,6 +3,22 @@ package msg;
 
 import "err.proto";
 import "map.proto";
+import "hero.proto";
+import "skill.proto";
+import "item.proto";
+
+message BattleStartRequest{
+    string battleId = 1;
+}
+
+message BattleStartResponse{
+    ResponseCode code = 1;
+    Error err = 2;
+
+    repeated Hero heros = 3;
+    repeated Skill skills = 4;
+    repeated Item items = 5;
+}
 
 message BattleGuanKaRequest{
     int32 guanKaId = 1;
