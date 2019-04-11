@@ -30,3 +30,14 @@ message BattleGuanKaResponse {
     int32 result = 3;
     GuanKa guanka = 4;
 }
+
+message BattleResultRequest {
+    string battleId = 1;
+    int32 result = 2;
+}
+
+message BattleResultResponse {
+    ResponseCode code = 1;
+    Error err = 2;
+    Earn earn = 3;
+}

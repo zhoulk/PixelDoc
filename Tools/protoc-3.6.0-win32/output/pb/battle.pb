@@ -1,5 +1,5 @@
 
-™
+à
 battle.protomsg	err.proto	map.proto
 hero.protoskill.proto
 item.proto"0
@@ -20,4 +20,12 @@ item.proto"0
 err (2
 .msg.ErrorRerr
 result (Rresult#
-guanka (2.msg.GuanKaRguankabproto3
+guanka (2.msg.GuanKaRguanka"I
+BattleResultRequest
+battleId (	RbattleId
+result (Rresult"z
+BattleResultResponse%
+code (2.msg.ResponseCodeRcode
+err (2
+.msg.ErrorRerr
+earn (2	.msg.EarnRearnbproto3

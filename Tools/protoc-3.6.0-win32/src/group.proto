@@ -1,0 +1,74 @@
+syntax = "proto3";
+package msg;
+
+import "err.proto";
+
+message GroupCreateRequest{
+    string groupName = 1;
+}
+
+message GroupCreateResponse{
+    ResponseCode code = 1;
+    Error err = 2;
+    Group group = 3;
+}
+
+message GroupOwnRequest{
+
+}
+
+message GroupOwnResponse{
+    ResponseCode code = 1;
+    Error err = 2;
+    Group group = 3;
+}
+
+message GroupListRequest{
+
+}
+
+message GroupListResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated Group groups = 3;
+}
+
+message GroupMembersRequest{
+    string groupId = 1;
+}
+
+message GroupMemberResponse{
+    ResponseCode code = 1;
+    Error err = 2;
+    repeated GroupMember members = 3;
+}
+
+message GroupOperRequest{
+    string groupId = 1;
+    int32 oper = 2;
+}
+
+message GroupOperResponse{
+    ResponseCode code = 1;
+    Error err = 2;
+}
+
+message Group{
+    string groupId = 1;
+    string groupName = 2;
+    string groupLeader = 3;
+    string groupDeclaration = 4;
+    int32 memberCnt = 5;
+    int32 memberTotal = 6;
+}
+
+message GroupMember{
+    string userId = 1;
+    string name = 2;
+    int32 level = 3;
+    int32 power = 4;
+    int32 contriToday = 5;
+    int32 contriTotal = 6;
+    int32 job = 7;
+    int32 offLineTime = 8;
+}
