@@ -39,14 +39,15 @@ namespace Msg {
             "Lm1zZy5FcnJvchIhCgdtZW1iZXJzGAMgAygLMhAubXNnLkdyb3VwTWVtYmVy",
             "IjEKEEdyb3VwT3BlclJlcXVlc3QSDwoHZ3JvdXBJZBgBIAEoCRIMCgRvcGVy",
             "GAIgASgFIk0KEUdyb3VwT3BlclJlc3BvbnNlEh8KBGNvZGUYASABKA4yES5t",
-            "c2cuUmVzcG9uc2VDb2RlEhcKA2VychgCIAEoCzIKLm1zZy5FcnJvciKCAQoF",
-            "R3JvdXASDwoHZ3JvdXBJZBgBIAEoCRIRCglncm91cE5hbWUYAiABKAkSEwoL",
-            "Z3JvdXBMZWFkZXIYAyABKAkSGAoQZ3JvdXBEZWNsYXJhdGlvbhgEIAEoCRIR",
-            "CgltZW1iZXJDbnQYBSABKAUSEwoLbWVtYmVyVG90YWwYBiABKAUilQEKC0dy",
-            "b3VwTWVtYmVyEg4KBnVzZXJJZBgBIAEoCRIMCgRuYW1lGAIgASgJEg0KBWxl",
-            "dmVsGAMgASgFEg0KBXBvd2VyGAQgASgFEhMKC2NvbnRyaVRvZGF5GAUgASgF",
-            "EhMKC2NvbnRyaVRvdGFsGAYgASgFEgsKA2pvYhgHIAEoBRITCgtvZmZMaW5l",
-            "VGltZRgIIAEoBWIGcHJvdG8z"));
+            "c2cuUmVzcG9uc2VDb2RlEhcKA2VychgCIAEoCzIKLm1zZy5FcnJvciLEAQoF",
+            "R3JvdXASDwoHR3JvdXBJZBgBIAEoCRIRCglHcm91cE5hbWUYAiABKAkSEwoL",
+            "R3JvdXBMZWFkZXIYAyABKAkSGAoQR3JvdXBEZWNsYXJhdGlvbhgEIAEoCRIR",
+            "CglNZW1iZXJDbnQYBSABKAUSEwoLTWVtYmVyVG90YWwYBiABKAUSEgoKR3Jv",
+            "dXBMZXZlbBgHIAEoBRIVCg1Db250cmlDdXJyZW50GAggASgFEhUKDUNvbnRy",
+            "aUxldmVsVXAYCSABKAUilQEKC0dyb3VwTWVtYmVyEg4KBlVzZXJJZBgBIAEo",
+            "CRIMCgROYW1lGAIgASgJEg0KBUxldmVsGAMgASgFEg0KBVBvd2VyGAQgASgF",
+            "EhMKC0NvbnRyaVRvZGF5GAUgASgFEhMKC0NvbnRyaVRvdGFsGAYgASgFEgsK",
+            "A0pvYhgHIAEoBRITCgtPZmZMaW5lVGltZRgIIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -60,7 +61,7 @@ namespace Msg {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupMemberResponse), global::Msg.GroupMemberResponse.Parser, new[]{ "Code", "Err", "Members" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupOperRequest), global::Msg.GroupOperRequest.Parser, new[]{ "GroupId", "Oper" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupOperResponse), global::Msg.GroupOperResponse.Parser, new[]{ "Code", "Err" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Group), global::Msg.Group.Parser, new[]{ "GroupId", "GroupName", "GroupLeader", "GroupDeclaration", "MemberCnt", "MemberTotal" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Group), global::Msg.Group.Parser, new[]{ "GroupId", "GroupName", "GroupLeader", "GroupDeclaration", "MemberCnt", "MemberTotal", "GroupLevel", "ContriCurrent", "ContriLevelUp" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupMember), global::Msg.GroupMember.Parser, new[]{ "UserId", "Name", "Level", "Power", "ContriToday", "ContriTotal", "Job", "OffLineTime" }, null, null, null)
           }));
     }
@@ -1639,6 +1640,9 @@ namespace Msg {
       groupDeclaration_ = other.groupDeclaration_;
       memberCnt_ = other.memberCnt_;
       memberTotal_ = other.memberTotal_;
+      groupLevel_ = other.groupLevel_;
+      contriCurrent_ = other.contriCurrent_;
+      contriLevelUp_ = other.contriLevelUp_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1647,7 +1651,7 @@ namespace Msg {
       return new Group(this);
     }
 
-    /// <summary>Field number for the "groupId" field.</summary>
+    /// <summary>Field number for the "GroupId" field.</summary>
     public const int GroupIdFieldNumber = 1;
     private string groupId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1658,7 +1662,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "groupName" field.</summary>
+    /// <summary>Field number for the "GroupName" field.</summary>
     public const int GroupNameFieldNumber = 2;
     private string groupName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1669,7 +1673,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "groupLeader" field.</summary>
+    /// <summary>Field number for the "GroupLeader" field.</summary>
     public const int GroupLeaderFieldNumber = 3;
     private string groupLeader_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1680,7 +1684,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "groupDeclaration" field.</summary>
+    /// <summary>Field number for the "GroupDeclaration" field.</summary>
     public const int GroupDeclarationFieldNumber = 4;
     private string groupDeclaration_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1691,7 +1695,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "memberCnt" field.</summary>
+    /// <summary>Field number for the "MemberCnt" field.</summary>
     public const int MemberCntFieldNumber = 5;
     private int memberCnt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1702,7 +1706,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "memberTotal" field.</summary>
+    /// <summary>Field number for the "MemberTotal" field.</summary>
     public const int MemberTotalFieldNumber = 6;
     private int memberTotal_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1710,6 +1714,39 @@ namespace Msg {
       get { return memberTotal_; }
       set {
         memberTotal_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "GroupLevel" field.</summary>
+    public const int GroupLevelFieldNumber = 7;
+    private int groupLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int GroupLevel {
+      get { return groupLevel_; }
+      set {
+        groupLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ContriCurrent" field.</summary>
+    public const int ContriCurrentFieldNumber = 8;
+    private int contriCurrent_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ContriCurrent {
+      get { return contriCurrent_; }
+      set {
+        contriCurrent_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ContriLevelUp" field.</summary>
+    public const int ContriLevelUpFieldNumber = 9;
+    private int contriLevelUp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ContriLevelUp {
+      get { return contriLevelUp_; }
+      set {
+        contriLevelUp_ = value;
       }
     }
 
@@ -1732,6 +1769,9 @@ namespace Msg {
       if (GroupDeclaration != other.GroupDeclaration) return false;
       if (MemberCnt != other.MemberCnt) return false;
       if (MemberTotal != other.MemberTotal) return false;
+      if (GroupLevel != other.GroupLevel) return false;
+      if (ContriCurrent != other.ContriCurrent) return false;
+      if (ContriLevelUp != other.ContriLevelUp) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1744,6 +1784,9 @@ namespace Msg {
       if (GroupDeclaration.Length != 0) hash ^= GroupDeclaration.GetHashCode();
       if (MemberCnt != 0) hash ^= MemberCnt.GetHashCode();
       if (MemberTotal != 0) hash ^= MemberTotal.GetHashCode();
+      if (GroupLevel != 0) hash ^= GroupLevel.GetHashCode();
+      if (ContriCurrent != 0) hash ^= ContriCurrent.GetHashCode();
+      if (ContriLevelUp != 0) hash ^= ContriLevelUp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1781,6 +1824,18 @@ namespace Msg {
         output.WriteRawTag(48);
         output.WriteInt32(MemberTotal);
       }
+      if (GroupLevel != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(GroupLevel);
+      }
+      if (ContriCurrent != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(ContriCurrent);
+      }
+      if (ContriLevelUp != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(ContriLevelUp);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1806,6 +1861,15 @@ namespace Msg {
       }
       if (MemberTotal != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(MemberTotal);
+      }
+      if (GroupLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GroupLevel);
+      }
+      if (ContriCurrent != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ContriCurrent);
+      }
+      if (ContriLevelUp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ContriLevelUp);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1835,6 +1899,15 @@ namespace Msg {
       }
       if (other.MemberTotal != 0) {
         MemberTotal = other.MemberTotal;
+      }
+      if (other.GroupLevel != 0) {
+        GroupLevel = other.GroupLevel;
+      }
+      if (other.ContriCurrent != 0) {
+        ContriCurrent = other.ContriCurrent;
+      }
+      if (other.ContriLevelUp != 0) {
+        ContriLevelUp = other.ContriLevelUp;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1869,6 +1942,18 @@ namespace Msg {
           }
           case 48: {
             MemberTotal = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            GroupLevel = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            ContriCurrent = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            ContriLevelUp = input.ReadInt32();
             break;
           }
         }
@@ -1918,7 +2003,7 @@ namespace Msg {
       return new GroupMember(this);
     }
 
-    /// <summary>Field number for the "userId" field.</summary>
+    /// <summary>Field number for the "UserId" field.</summary>
     public const int UserIdFieldNumber = 1;
     private string userId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1929,7 +2014,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "name" field.</summary>
+    /// <summary>Field number for the "Name" field.</summary>
     public const int NameFieldNumber = 2;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1940,7 +2025,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "level" field.</summary>
+    /// <summary>Field number for the "Level" field.</summary>
     public const int LevelFieldNumber = 3;
     private int level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1951,7 +2036,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "power" field.</summary>
+    /// <summary>Field number for the "Power" field.</summary>
     public const int PowerFieldNumber = 4;
     private int power_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1962,7 +2047,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "contriToday" field.</summary>
+    /// <summary>Field number for the "ContriToday" field.</summary>
     public const int ContriTodayFieldNumber = 5;
     private int contriToday_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1973,7 +2058,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "contriTotal" field.</summary>
+    /// <summary>Field number for the "ContriTotal" field.</summary>
     public const int ContriTotalFieldNumber = 6;
     private int contriTotal_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1984,7 +2069,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "job" field.</summary>
+    /// <summary>Field number for the "Job" field.</summary>
     public const int JobFieldNumber = 7;
     private int job_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1995,7 +2080,7 @@ namespace Msg {
       }
     }
 
-    /// <summary>Field number for the "offLineTime" field.</summary>
+    /// <summary>Field number for the "OffLineTime" field.</summary>
     public const int OffLineTimeFieldNumber = 8;
     private int offLineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

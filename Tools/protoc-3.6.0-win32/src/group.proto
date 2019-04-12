@@ -54,21 +54,24 @@ message GroupOperResponse{
 }
 
 message Group{
-    string groupId = 1;
-    string groupName = 2;
-    string groupLeader = 3;
-    string groupDeclaration = 4;
-    int32 memberCnt = 5;
-    int32 memberTotal = 6;
+    string GroupId = 1;
+    string GroupName = 2;
+    string GroupLeader = 3;
+    string GroupDeclaration = 4;
+    int32 MemberCnt = 5;
+    int32 MemberTotal = 6;
+    int32 GroupLevel = 7;
+    int32 ContriCurrent = 8;
+    int32 ContriLevelUp = 9;
 }
 
 message GroupMember{
-    string userId = 1;
-    string name = 2;
-    int32 level = 3;
-    int32 power = 4;
-    int32 contriToday = 5;
-    int32 contriTotal = 6;
-    int32 job = 7;
-    int32 offLineTime = 8;
+    string UserId = 1;
+    string Name = 2;
+    int32 Level = 3;
+    int32 Power = 4;
+    int32 ContriToday = 5;
+    int32 ContriTotal = 6;
+    int32 Job = 7;
+    int32 OffLineTime = 8;
 }
