@@ -37,7 +37,7 @@ message GroupMembersRequest{
     string groupId = 1;
 }
 
-message GroupMemberResponse{
+message GroupMembersResponse{
     ResponseCode code = 1;
     Error err = 2;
     repeated GroupMember members = 3;

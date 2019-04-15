@@ -21,6 +21,16 @@ enum HeroRandomLevel{
 	BEST = 2;
 }
 
+message HeroLotteryRequest{
+
+}
+
+message HeroLotteryResponse{
+	ResponseCode code = 1;
+	Error err = 2;
+	HeroLottery heroLottery = 3;
+}
+
 message HeroRandomRequest{
 	HeroRandomLevel Level = 1;
 }
@@ -109,4 +119,17 @@ message Hero{
 	int32 Exp = 24;
 	int32 LevelUpExp = 25;
 	repeated string ItemIds = 26;
+}
+
+message HeroLottery{
+	int32 FreeGoodLottery = 1;
+	int32 FreeBetterLottery = 2;
+	int64 NextGoodLotteryStamp = 3;
+	int64 NextBetterLotteryStamp = 4;
+	int32 MaxFreeGoodLottery = 5;
+	int32 MaxFreeBetterLottery = 6;
+	int32 GoodLotteryCnt = 7;
+	int32 BetterLotteryCnt = 8;      
+	int32 NeedGoodLotteryCnt = 9;  
+	int32 NeedBetterLotteryCnt = 10;      
 }

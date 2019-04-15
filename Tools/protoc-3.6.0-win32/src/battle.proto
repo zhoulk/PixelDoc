@@ -7,6 +7,18 @@ import "hero.proto";
 import "skill.proto";
 import "item.proto";
 
+message BattleCreateRequest{
+    int32 type = 1;
+    repeated string args = 2;
+}
+
+message BattleCreateResponse{
+    ResponseCode code = 1;
+    Error err = 2;
+
+    string battleId = 3;
+}
+
 message BattleStartRequest{
     string battleId = 1;
 }

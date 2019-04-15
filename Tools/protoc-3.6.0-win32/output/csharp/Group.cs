@@ -34,20 +34,20 @@ namespace Msg {
             "UmVxdWVzdCJpChFHcm91cExpc3RSZXNwb25zZRIfCgRjb2RlGAEgASgOMhEu",
             "bXNnLlJlc3BvbnNlQ29kZRIXCgNlcnIYAiABKAsyCi5tc2cuRXJyb3ISGgoG",
             "Z3JvdXBzGAMgAygLMgoubXNnLkdyb3VwIiYKE0dyb3VwTWVtYmVyc1JlcXVl",
-            "c3QSDwoHZ3JvdXBJZBgBIAEoCSJyChNHcm91cE1lbWJlclJlc3BvbnNlEh8K",
-            "BGNvZGUYASABKA4yES5tc2cuUmVzcG9uc2VDb2RlEhcKA2VychgCIAEoCzIK",
-            "Lm1zZy5FcnJvchIhCgdtZW1iZXJzGAMgAygLMhAubXNnLkdyb3VwTWVtYmVy",
-            "IjEKEEdyb3VwT3BlclJlcXVlc3QSDwoHZ3JvdXBJZBgBIAEoCRIMCgRvcGVy",
-            "GAIgASgFIk0KEUdyb3VwT3BlclJlc3BvbnNlEh8KBGNvZGUYASABKA4yES5t",
-            "c2cuUmVzcG9uc2VDb2RlEhcKA2VychgCIAEoCzIKLm1zZy5FcnJvciLEAQoF",
-            "R3JvdXASDwoHR3JvdXBJZBgBIAEoCRIRCglHcm91cE5hbWUYAiABKAkSEwoL",
-            "R3JvdXBMZWFkZXIYAyABKAkSGAoQR3JvdXBEZWNsYXJhdGlvbhgEIAEoCRIR",
-            "CglNZW1iZXJDbnQYBSABKAUSEwoLTWVtYmVyVG90YWwYBiABKAUSEgoKR3Jv",
-            "dXBMZXZlbBgHIAEoBRIVCg1Db250cmlDdXJyZW50GAggASgFEhUKDUNvbnRy",
-            "aUxldmVsVXAYCSABKAUilQEKC0dyb3VwTWVtYmVyEg4KBlVzZXJJZBgBIAEo",
-            "CRIMCgROYW1lGAIgASgJEg0KBUxldmVsGAMgASgFEg0KBVBvd2VyGAQgASgF",
-            "EhMKC0NvbnRyaVRvZGF5GAUgASgFEhMKC0NvbnRyaVRvdGFsGAYgASgFEgsK",
-            "A0pvYhgHIAEoBRITCgtPZmZMaW5lVGltZRgIIAEoBWIGcHJvdG8z"));
+            "c3QSDwoHZ3JvdXBJZBgBIAEoCSJzChRHcm91cE1lbWJlcnNSZXNwb25zZRIf",
+            "CgRjb2RlGAEgASgOMhEubXNnLlJlc3BvbnNlQ29kZRIXCgNlcnIYAiABKAsy",
+            "Ci5tc2cuRXJyb3ISIQoHbWVtYmVycxgDIAMoCzIQLm1zZy5Hcm91cE1lbWJl",
+            "ciIxChBHcm91cE9wZXJSZXF1ZXN0Eg8KB2dyb3VwSWQYASABKAkSDAoEb3Bl",
+            "chgCIAEoBSJNChFHcm91cE9wZXJSZXNwb25zZRIfCgRjb2RlGAEgASgOMhEu",
+            "bXNnLlJlc3BvbnNlQ29kZRIXCgNlcnIYAiABKAsyCi5tc2cuRXJyb3IixAEK",
+            "BUdyb3VwEg8KB0dyb3VwSWQYASABKAkSEQoJR3JvdXBOYW1lGAIgASgJEhMK",
+            "C0dyb3VwTGVhZGVyGAMgASgJEhgKEEdyb3VwRGVjbGFyYXRpb24YBCABKAkS",
+            "EQoJTWVtYmVyQ250GAUgASgFEhMKC01lbWJlclRvdGFsGAYgASgFEhIKCkdy",
+            "b3VwTGV2ZWwYByABKAUSFQoNQ29udHJpQ3VycmVudBgIIAEoBRIVCg1Db250",
+            "cmlMZXZlbFVwGAkgASgFIpUBCgtHcm91cE1lbWJlchIOCgZVc2VySWQYASAB",
+            "KAkSDAoETmFtZRgCIAEoCRINCgVMZXZlbBgDIAEoBRINCgVQb3dlchgEIAEo",
+            "BRITCgtDb250cmlUb2RheRgFIAEoBRITCgtDb250cmlUb3RhbBgGIAEoBRIL",
+            "CgNKb2IYByABKAUSEwoLT2ZmTGluZVRpbWUYCCABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -58,7 +58,7 @@ namespace Msg {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupListRequest), global::Msg.GroupListRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupListResponse), global::Msg.GroupListResponse.Parser, new[]{ "Code", "Err", "Groups" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupMembersRequest), global::Msg.GroupMembersRequest.Parser, new[]{ "GroupId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupMemberResponse), global::Msg.GroupMemberResponse.Parser, new[]{ "Code", "Err", "Members" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupMembersResponse), global::Msg.GroupMembersResponse.Parser, new[]{ "Code", "Err", "Members" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupOperRequest), global::Msg.GroupOperRequest.Parser, new[]{ "GroupId", "Oper" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.GroupOperResponse), global::Msg.GroupOperResponse.Parser, new[]{ "Code", "Err" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Group), global::Msg.Group.Parser, new[]{ "GroupId", "GroupName", "GroupLeader", "GroupDeclaration", "MemberCnt", "MemberTotal", "GroupLevel", "ContriCurrent", "ContriLevelUp" }, null, null, null),
@@ -1106,11 +1106,11 @@ namespace Msg {
 
   }
 
-  public sealed partial class GroupMemberResponse : pb::IMessage<GroupMemberResponse> {
-    private static readonly pb::MessageParser<GroupMemberResponse> _parser = new pb::MessageParser<GroupMemberResponse>(() => new GroupMemberResponse());
+  public sealed partial class GroupMembersResponse : pb::IMessage<GroupMembersResponse> {
+    private static readonly pb::MessageParser<GroupMembersResponse> _parser = new pb::MessageParser<GroupMembersResponse>(() => new GroupMembersResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GroupMemberResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<GroupMembersResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1123,14 +1123,14 @@ namespace Msg {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GroupMemberResponse() {
+    public GroupMembersResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GroupMemberResponse(GroupMemberResponse other) : this() {
+    public GroupMembersResponse(GroupMembersResponse other) : this() {
       code_ = other.code_;
       err_ = other.err_ != null ? other.err_.Clone() : null;
       members_ = other.members_.Clone();
@@ -1138,8 +1138,8 @@ namespace Msg {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GroupMemberResponse Clone() {
-      return new GroupMemberResponse(this);
+    public GroupMembersResponse Clone() {
+      return new GroupMembersResponse(this);
     }
 
     /// <summary>Field number for the "code" field.</summary>
@@ -1176,11 +1176,11 @@ namespace Msg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as GroupMemberResponse);
+      return Equals(other as GroupMembersResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GroupMemberResponse other) {
+    public bool Equals(GroupMembersResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1243,7 +1243,7 @@ namespace Msg {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GroupMemberResponse other) {
+    public void MergeFrom(GroupMembersResponse other) {
       if (other == null) {
         return;
       }
