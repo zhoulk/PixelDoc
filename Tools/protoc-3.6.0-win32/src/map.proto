@@ -39,6 +39,10 @@ message GuanKa {
 	Earn  Earn = 4;
 	Expend Expend = 5;
 	bool IsOpen = 6;
+	int32 Star = 7;
+	int32 Status = 8;
+	int32 Times = 9;
+	int32 TotalTimes = 10;
 }
 
 message Earn {
