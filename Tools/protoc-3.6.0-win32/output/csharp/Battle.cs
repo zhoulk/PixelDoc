@@ -38,10 +38,11 @@ namespace Msg {
             "ZRIfCgRjb2RlGAEgASgOMhEubXNnLlJlc3BvbnNlQ29kZRIXCgNlcnIYAiAB",
             "KAsyCi5tc2cuRXJyb3ISDgoGcmVzdWx0GAMgASgFEhsKBmd1YW5rYRgEIAEo",
             "CzILLm1zZy5HdWFuS2EiNwoTQmF0dGxlUmVzdWx0UmVxdWVzdBIQCghiYXR0",
-            "bGVJZBgBIAEoCRIOCgZyZXN1bHQYAiABKAUiaQoUQmF0dGxlUmVzdWx0UmVz",
-            "cG9uc2USHwoEY29kZRgBIAEoDjIRLm1zZy5SZXNwb25zZUNvZGUSFwoDZXJy",
-            "GAIgASgLMgoubXNnLkVycm9yEhcKBGVhcm4YAyABKAsyCS5tc2cuRWFybmIG",
-            "cHJvdG8z"));
+            "bGVJZBgBIAEoCRIOCgZyZXN1bHQYAiABKAUimQEKFEJhdHRsZVJlc3VsdFJl",
+            "c3BvbnNlEh8KBGNvZGUYASABKA4yES5tc2cuUmVzcG9uc2VDb2RlEhcKA2Vy",
+            "chgCIAEoCzIKLm1zZy5FcnJvchIXCgRlYXJuGAMgASgLMgkubXNnLkVhcm4S",
+            "CwoDRXhwGAQgASgFEg0KBUxldmVsGAUgASgFEhIKCkxldmVsVXBFeHAYBiAB",
+            "KAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, global::Msg.MapReflection.Descriptor, global::Msg.HeroReflection.Descriptor, global::Msg.SkillReflection.Descriptor, global::Msg.ItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -52,7 +53,7 @@ namespace Msg {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.BattleGuanKaRequest), global::Msg.BattleGuanKaRequest.Parser, new[]{ "GuanKaId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.BattleGuanKaResponse), global::Msg.BattleGuanKaResponse.Parser, new[]{ "Code", "Err", "Result", "Guanka" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.BattleResultRequest), global::Msg.BattleResultRequest.Parser, new[]{ "BattleId", "Result" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.BattleResultResponse), global::Msg.BattleResultResponse.Parser, new[]{ "Code", "Err", "Earn" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.BattleResultResponse), global::Msg.BattleResultResponse.Parser, new[]{ "Code", "Err", "Earn", "Exp", "Level", "LevelUpExp" }, null, null, null)
           }));
     }
     #endregion
@@ -1290,6 +1291,9 @@ namespace Msg {
       code_ = other.code_;
       err_ = other.err_ != null ? other.err_.Clone() : null;
       earn_ = other.earn_ != null ? other.earn_.Clone() : null;
+      exp_ = other.exp_;
+      level_ = other.level_;
+      levelUpExp_ = other.levelUpExp_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1331,6 +1335,39 @@ namespace Msg {
       }
     }
 
+    /// <summary>Field number for the "Exp" field.</summary>
+    public const int ExpFieldNumber = 4;
+    private int exp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Exp {
+      get { return exp_; }
+      set {
+        exp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Level" field.</summary>
+    public const int LevelFieldNumber = 5;
+    private int level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "LevelUpExp" field.</summary>
+    public const int LevelUpExpFieldNumber = 6;
+    private int levelUpExp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelUpExp {
+      get { return levelUpExp_; }
+      set {
+        levelUpExp_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BattleResultResponse);
@@ -1347,6 +1384,9 @@ namespace Msg {
       if (Code != other.Code) return false;
       if (!object.Equals(Err, other.Err)) return false;
       if (!object.Equals(Earn, other.Earn)) return false;
+      if (Exp != other.Exp) return false;
+      if (Level != other.Level) return false;
+      if (LevelUpExp != other.LevelUpExp) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1356,6 +1396,9 @@ namespace Msg {
       if (Code != 0) hash ^= Code.GetHashCode();
       if (err_ != null) hash ^= Err.GetHashCode();
       if (earn_ != null) hash ^= Earn.GetHashCode();
+      if (Exp != 0) hash ^= Exp.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (LevelUpExp != 0) hash ^= LevelUpExp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1381,6 +1424,18 @@ namespace Msg {
         output.WriteRawTag(26);
         output.WriteMessage(Earn);
       }
+      if (Exp != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Exp);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Level);
+      }
+      if (LevelUpExp != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(LevelUpExp);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1397,6 +1452,15 @@ namespace Msg {
       }
       if (earn_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Earn);
+      }
+      if (Exp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Exp);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (LevelUpExp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LevelUpExp);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1423,6 +1487,15 @@ namespace Msg {
           earn_ = new global::Msg.Earn();
         }
         Earn.MergeFrom(other.Earn);
+      }
+      if (other.Exp != 0) {
+        Exp = other.Exp;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.LevelUpExp != 0) {
+        LevelUpExp = other.LevelUpExp;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1451,6 +1524,18 @@ namespace Msg {
               earn_ = new global::Msg.Earn();
             }
             input.ReadMessage(earn_);
+            break;
+          }
+          case 32: {
+            Exp = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            LevelUpExp = input.ReadInt32();
             break;
           }
         }

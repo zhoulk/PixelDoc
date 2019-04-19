@@ -52,4 +52,7 @@ message BattleResultResponse {
     ResponseCode code = 1;
     Error err = 2;
     Earn earn = 3;
+    int32 Exp     = 4;
+	int32 Level   = 5;
+	int32 LevelUpExp = 6;
 }
