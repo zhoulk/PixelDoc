@@ -29,7 +29,7 @@ message BattleStartResponse{
 
     repeated Hero heros = 3;
     repeated Skill skills = 4;
-    repeated Item items = 5;
+    repeated Equip equips = 5;
 }
 
 message BattleGuanKaRequest{

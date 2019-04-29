@@ -82,14 +82,14 @@ message HeroSkillsResponse{
     repeated Skill skills = 3;
 }
 
-message HeroItemsRequest{
+message HeroEquipsRequest{
 	string heroId = 1;
 }
 
-message HeroItemsResponse{
+message HeroEquipsResponse{
 	ResponseCode code = 1;
     Error err = 2;
-    repeated Item items = 3;
+    repeated Equip equips = 3;
 }
 
 message Hero{

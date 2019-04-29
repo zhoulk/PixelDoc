@@ -7,13 +7,50 @@ message ItemRequest{
 
 }
 
-message ItemResponse {
+message ItemResponse{
 	ResponseCode code = 1;
     Error err = 2;
     repeated Item items = 3;
 }
 
+message EquipRequest{
+
+}
+
+message EquipResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated Equip equips = 3;
+}
+
+message ConsumeRequest{
+
+}
+
+message ConsumeResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated Consume consumes = 3;
+}
+
+message HeroChipRequest{
+
+}
+
+message HeroChipResponse {
+	ResponseCode code = 1;
+    Error err = 2;
+    repeated HeroChip heroChips = 3;
+}
+
 message Item {
+    int32 Id     =1;
+	string Name   =2;
+	int32 Price  =3;
+	string Desc   =4;
+}
+
+message Equip {
     int32 Id     =1;
 	string Name   =2;
 	int32 Price  =3;
@@ -23,6 +60,24 @@ message Item {
 
 	string ItemId = 7;
 	string HeroId = 8;
+}
+
+message Consume {
+    int32 Id     =1;
+	string Name   =2;
+	int32 Price  =3;
+	string Desc   =4;
+	string ItemId = 5;
+}
+
+message HeroChip {
+    int32 Id     =1;
+	string Name   =2;
+	int32 Price  =3;
+	string Desc   =4;
+	string ItemId = 5;
+	int32 Cnt = 6;
+	int32 Compose = 7;
 }
 
 message Mix {
