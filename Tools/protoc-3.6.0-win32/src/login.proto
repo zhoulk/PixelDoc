@@ -37,6 +37,11 @@ message ZoneResponse{
 	repeated Zone zones = 3;
 }
 
+//通知用户信息
+message PlayerInfoNotify{
+	Player player = 1;
+}
+
 message Player {
 	string UserId  = 1;
 	string Name    = 2;
