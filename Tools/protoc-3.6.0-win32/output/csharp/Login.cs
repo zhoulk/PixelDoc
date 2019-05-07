@@ -35,12 +35,14 @@ namespace Msg {
             "Cgxab25lUmVzcG9uc2USHwoEY29kZRgBIAEoDjIRLm1zZy5SZXNwb25zZUNv",
             "ZGUSFwoDZXJyGAIgASgLMgoubXNnLkVycm9yEhgKBXpvbmVzGAMgAygLMgku",
             "bXNnLlpvbmUiLwoQUGxheWVySW5mb05vdGlmeRIbCgZwbGF5ZXIYASABKAsy",
-            "Cy5tc2cuUGxheWVyIkcKBlBsYXllchIOCgZVc2VySWQYASABKAkSDAoETmFt",
-            "ZRgCIAEoCRIfCghCYXNlSW5mbxgDIAEoCzINLm1zZy5CYXNlSW5mbyJ6CghC",
-            "YXNlSW5mbxIMCgRHb2xkGAEgASgFEg8KB0RpYW1vbmQYAiABKAUSCwoDRXhw",
-            "GAMgASgFEg0KBVBvd2VyGAQgASgFEg0KBUxldmVsGAUgASgFEhIKCkxldmVs",
-            "VXBFeHAYBiABKAUSEAoITWF4UG93ZXIYByABKAUiLwoEWm9uZRIKCgJJZBgB",
-            "IAEoCRIMCgROYW1lGAIgASgJEg0KBUlzTmV3GAMgASgIYgZwcm90bzM="));
+            "Cy5tc2cuUGxheWVyImwKBlBsYXllchIOCgZVc2VySWQYASABKAkSDAoETmFt",
+            "ZRgCIAEoCRIfCghCYXNlSW5mbxgDIAEoCzINLm1zZy5CYXNlSW5mbxIjCgpF",
+            "eHRlbmRJbmZvGAQgASgLMg8ubXNnLkV4dGVuZEluZm8iegoIQmFzZUluZm8S",
+            "DAoER29sZBgBIAEoBRIPCgdEaWFtb25kGAIgASgFEgsKA0V4cBgDIAEoBRIN",
+            "CgVQb3dlchgEIAEoBRINCgVMZXZlbBgFIAEoBRISCgpMZXZlbFVwRXhwGAYg",
+            "ASgFEhAKCE1heFBvd2VyGAcgASgFIh0KCkV4dGVuZEluZm8SDwoHR3JvdXBJ",
+            "ZBgBIAEoCSIvCgRab25lEgoKAklkGAEgASgJEgwKBE5hbWUYAiABKAkSDQoF",
+            "SXNOZXcYAyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Msg.ErrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -51,8 +53,9 @@ namespace Msg {
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ZoneRequest), global::Msg.ZoneRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ZoneResponse), global::Msg.ZoneResponse.Parser, new[]{ "Code", "Err", "Zones" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.PlayerInfoNotify), global::Msg.PlayerInfoNotify.Parser, new[]{ "Player" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Player), global::Msg.Player.Parser, new[]{ "UserId", "Name", "BaseInfo" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Player), global::Msg.Player.Parser, new[]{ "UserId", "Name", "BaseInfo", "ExtendInfo" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.BaseInfo), global::Msg.BaseInfo.Parser, new[]{ "Gold", "Diamond", "Exp", "Power", "Level", "LevelUpExp", "MaxPower" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Msg.ExtendInfo), global::Msg.ExtendInfo.Parser, new[]{ "GroupId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Msg.Zone), global::Msg.Zone.Parser, new[]{ "Id", "Name", "IsNew" }, null, null, null)
           }));
     }
@@ -1227,6 +1230,7 @@ namespace Msg {
       userId_ = other.userId_;
       name_ = other.name_;
       baseInfo_ = other.baseInfo_ != null ? other.baseInfo_.Clone() : null;
+      extendInfo_ = other.extendInfo_ != null ? other.extendInfo_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1268,6 +1272,17 @@ namespace Msg {
       }
     }
 
+    /// <summary>Field number for the "ExtendInfo" field.</summary>
+    public const int ExtendInfoFieldNumber = 4;
+    private global::Msg.ExtendInfo extendInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Msg.ExtendInfo ExtendInfo {
+      get { return extendInfo_; }
+      set {
+        extendInfo_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Player);
@@ -1284,6 +1299,7 @@ namespace Msg {
       if (UserId != other.UserId) return false;
       if (Name != other.Name) return false;
       if (!object.Equals(BaseInfo, other.BaseInfo)) return false;
+      if (!object.Equals(ExtendInfo, other.ExtendInfo)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1293,6 +1309,7 @@ namespace Msg {
       if (UserId.Length != 0) hash ^= UserId.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (baseInfo_ != null) hash ^= BaseInfo.GetHashCode();
+      if (extendInfo_ != null) hash ^= ExtendInfo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1318,6 +1335,10 @@ namespace Msg {
         output.WriteRawTag(26);
         output.WriteMessage(BaseInfo);
       }
+      if (extendInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ExtendInfo);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1334,6 +1355,9 @@ namespace Msg {
       }
       if (baseInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(BaseInfo);
+      }
+      if (extendInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ExtendInfo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1357,6 +1381,12 @@ namespace Msg {
           baseInfo_ = new global::Msg.BaseInfo();
         }
         BaseInfo.MergeFrom(other.BaseInfo);
+      }
+      if (other.extendInfo_ != null) {
+        if (extendInfo_ == null) {
+          extendInfo_ = new global::Msg.ExtendInfo();
+        }
+        ExtendInfo.MergeFrom(other.ExtendInfo);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1382,6 +1412,13 @@ namespace Msg {
               baseInfo_ = new global::Msg.BaseInfo();
             }
             input.ReadMessage(baseInfo_);
+            break;
+          }
+          case 34: {
+            if (extendInfo_ == null) {
+              extendInfo_ = new global::Msg.ExtendInfo();
+            }
+            input.ReadMessage(extendInfo_);
             break;
           }
         }
@@ -1687,6 +1724,135 @@ namespace Msg {
 
   }
 
+  public sealed partial class ExtendInfo : pb::IMessage<ExtendInfo> {
+    private static readonly pb::MessageParser<ExtendInfo> _parser = new pb::MessageParser<ExtendInfo>(() => new ExtendInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ExtendInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Msg.LoginReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ExtendInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ExtendInfo(ExtendInfo other) : this() {
+      groupId_ = other.groupId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ExtendInfo Clone() {
+      return new ExtendInfo(this);
+    }
+
+    /// <summary>Field number for the "GroupId" field.</summary>
+    public const int GroupIdFieldNumber = 1;
+    private string groupId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string GroupId {
+      get { return groupId_; }
+      set {
+        groupId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ExtendInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ExtendInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (GroupId != other.GroupId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (GroupId.Length != 0) hash ^= GroupId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (GroupId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GroupId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (GroupId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ExtendInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.GroupId.Length != 0) {
+        GroupId = other.GroupId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            GroupId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class Zone : pb::IMessage<Zone> {
     private static readonly pb::MessageParser<Zone> _parser = new pb::MessageParser<Zone>(() => new Zone());
     private pb::UnknownFieldSet _unknownFields;
@@ -1695,7 +1861,7 @@ namespace Msg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Msg.LoginReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Msg.LoginReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

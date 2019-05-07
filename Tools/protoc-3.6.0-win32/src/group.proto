@@ -43,12 +43,42 @@ message GroupMembersResponse{
     repeated GroupMember members = 3;
 }
 
+message GroupApplyRequest{
+    string groupId = 1;
+}
+
+message GroupApplyResponse{
+    ResponseCode code = 1;
+    Error err = 2;
+}
+
+message GroupApplyMembersRequest{
+    string groupId = 1;
+}
+
+message GroupApplyMembersResponse{
+    ResponseCode code = 1;
+    Error err = 2;
+    repeated GroupMember members = 3;
+}
+
 message GroupOperRequest{
     string groupId = 1;
     int32 oper = 2;
+    string userId = 3;
 }
 
 message GroupOperResponse{
+    ResponseCode code = 1;
+    Error err = 2;
+}
+
+message GroupContriRequest{
+    string groupId = 1;
+    int32 level = 2;
+}
+
+message GroupContriResponse{
     ResponseCode code = 1;
     Error err = 2;
 }

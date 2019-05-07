@@ -47,6 +47,7 @@ message Player {
 	string Name    = 2;
 
 	BaseInfo   BaseInfo = 3;
+	ExtendInfo ExtendInfo = 4;
 }
 
 message BaseInfo {
@@ -57,6 +58,11 @@ message BaseInfo {
 	int32 Level   = 5;
 	int32 LevelUpExp = 6;
 	int32 MaxPower = 7;
+}
+
+message ExtendInfo {
+	string GroupId = 1;
+	
 }
 
 message Zone {
